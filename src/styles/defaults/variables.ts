@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 
 export const colors = {
-  brand: '#663399',
-  lilac: '#9d7cbf',
-  accent: '#ffb238',
+  brand: '#000000',
+  lilac: '#FFFFFF',
+  accent: '#003459',
   success: '#37b635',
   warning: '#ec1818',
   ui: {
@@ -17,8 +17,8 @@ export const colors = {
     copy: 'hsla(270, 15.797828016000002%, 0%, 0.88)',
     calm: 'rgba(0, 0, 0, 0.54)'
   },
-  white: '#fff',
-  black: '#000'
+  white: '#FFFFFF',
+  black: '#000000'
 }
 
 export const fonts = {
@@ -29,11 +29,11 @@ export const fonts = {
 }
 
 export const breakpoints = {
-  xs: 0,
-  sm: 576,
+  xs: 320,
+  sm: 425,
   md: 768,
-  lg: 992,
-  xl: 1200
+  lg: 1024,
+  xl: 1440
 }
 
 export const widths = {
