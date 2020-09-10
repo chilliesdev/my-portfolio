@@ -29,7 +29,7 @@ export default `
   }
 
   a {
-    color: ${colors.brand};
+    color: ${colors.secondary};
     text-decoration: none;
 
     &:hover,

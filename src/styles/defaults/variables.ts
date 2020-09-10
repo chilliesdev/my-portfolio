@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 
 export const colors = {
+  primary: '#000000',
+  secondary: '#FFFFFF',
   brand: '#000000',
   lilac: '#FFFFFF',
   accent: '#003459',
@@ -44,12 +46,12 @@ export const widths = {
 
 export const dimensions = {
   fontSize: {
-    regular: 16,
+    regular: 12,
     large: 18
   },
   headingSizes: {
-    h1: 2.441,
-    h2: 1.953,
+    h1: 2.8125,
+    h2: 2,
     h3: 1.563,
     h4: 1.25
   },
