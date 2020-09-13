@@ -5,20 +5,16 @@ import HeaderInner from '../styles/HeaderInner'
 
 import Logo from './Logo'
 import ThemeBtn from './ThemeBtn'
-import MenuIcon from './MenuIcon'
+import Menu from './Menu'
 import HeaderInnerBtnGroup from '../styles/HeaderInnerBtnGroup'
 
-interface HeaderProps {
-  title: string
-}
-
-const Header: React.FC<HeaderProps> = () => (
+const Header: React.FC = () => (
   <StyledHeader>
     <HeaderInner>
       <Logo />
       <HeaderInnerBtnGroup>
         <ThemeBtn />
-        <MenuIcon />
+        <Menu />
       </HeaderInnerBtnGroup>
     </HeaderInner>
   </StyledHeader>

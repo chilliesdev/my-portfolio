@@ -1,12 +1,7 @@
 import styled from '@emotion/styled'
 
-import { widths } from './defaults/variables'
-import { getEmSize } from './defaults/mixins'
-
 export default styled.div`
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 20px;
   width: auto;
-  max-width: ${getEmSize(widths.lg)}em;
 `
