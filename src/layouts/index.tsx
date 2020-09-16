@@ -8,6 +8,7 @@ import '../styles/defaults/normalize'
 import Header from '../components/Header'
 import LayoutRoot from '../components/LayoutRoot'
 import LayoutMain from '../components/LayoutMain'
+import Footer from '../components/Footer'
 
 interface StaticQueryProps {
   site: {
@@ -42,6 +43,7 @@ const IndexLayout: React.FC = ({ children }) => (
         />
         <Header />
         <LayoutMain>{children}</LayoutMain>
+        <Footer />
       </LayoutRoot>
     )}
   />

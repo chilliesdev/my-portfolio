@@ -8,29 +8,45 @@ import Button from '../styles/Button'
 import FeaturedButtonWrapper from '../styles/FeaturedButtonWrapper'
 import ArrowButton from './ArrowButton'
 
-const Featured: React.FC = () => {
-  const defaults: {
+interface Props {
+  details?: {
+    image: string
     heading: string
     body: string
     accentBtn: string
-    arrow: string
-  } = {
-    heading: 'Hi, I am a Full-Stack Web Developer',
-    body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod tempor incididunt ut labore et dolore magna  aliqua.
-      Netus et malesuada fames ac turpis egestas  integer eget aliquet. Cursus euismod quis viverra nibh cras  pulvinar mattis nunc.`,
-    accentBtn: 'About Me',
-    arrow: 'featured projects'
+    secondaryBtn: string
+    arrowBtn: string
   }
+  open: boolean
+  onNext: () => void
+}
 
+interface Defaults {
+  heading: string
+  body: string
+  accentBtn: string
+  arrow: string
+}
+
+const defaults: Defaults = {
+  heading: 'Hi, I am a Full-Stack Web Developer',
+  body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod tempor incididunt ut labore et dolore magna  aliqua.
+      Netus et malesuada fames ac turpis egestas  integer eget aliquet. Cursus euismod quis viverra nibh cras  pulvinar mattis nunc.`,
+  accentBtn: 'About Me',
+  arrow: 'featured projects'
+}
+
+const Featured: React.FC<Props> = ({ details, open, onNext }) => {
   return (
-    <StyledFeatured>
-      <FeaturedWrapper>
-        <FeaturedHeading>{defaults.heading}</FeaturedHeading>
-        <FeaturedBody>{defaults.body}</FeaturedBody>
+    <StyledFeatured image={details?.image} open={open}>
+      <FeaturedWrapper open={open}>
+        <FeaturedHeading>{details ? details.heading : defaults.heading}</FeaturedHeading>
+        <FeaturedBody>{details ? details.body : defaults.body}</FeaturedBody>
         <FeaturedButtonWrapper>
-          <Button color="accent">{defaults.accentBtn}</Button>
+          <Button color="accent">{details ? 'details' : defaults.accentBtn}</Button>
+          {details && <Button color="secondary">all projects</Button>}
         </FeaturedButtonWrapper>
-        <ArrowButton>{defaults.arrow}</ArrowButton>
+        <ArrowButton onClick={onNext}>{details ? details.arrowBtn : defaults.arrow}</ArrowButton>
       </FeaturedWrapper>
     </StyledFeatured>
   )
