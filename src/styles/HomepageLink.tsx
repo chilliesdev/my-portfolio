@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { colors } from './defaults/variables'
 
 export default styled(Link)`
-  color: ${colors.white};
+  color: ${colors.secondary};
   font-size: 1.5rem;
   font-weight: 600;
 

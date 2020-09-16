@@ -12,7 +12,7 @@ export default styled.button<Props>`
   flex-direction: column;
   height: 25px;
   cursor: pointer;
-  background-color: ${colors.primary};
+  background-color: inherit;
   border: none;
   z-index: 2;
   outline: none;

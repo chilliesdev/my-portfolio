@@ -2,8 +2,5 @@ import styled from '@emotion/styled'
 
 export default styled.div`
   display: block;
-  flex: 1;
-  position: relative;
-  margin: 0;
-  padding: 0;
+  max-width: 352px;
 `

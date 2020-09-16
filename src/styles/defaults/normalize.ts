@@ -94,19 +94,19 @@ export default `
 
   h1 {
     margin-top: 0;
-    font-size: ${dimensions.headingSizes.h1}rem;
+    font-size: ${dimensions.headingSizes.h1}px;
   }
 
   h2 {
-    font-size: ${dimensions.headingSizes.h2}rem;
+    font-size: ${dimensions.headingSizes.h2}px;
   }
 
   h3 {
-    font-size: ${dimensions.headingSizes.h3}rem;
+    font-size: ${dimensions.headingSizes.h3}px;
   }
 
   h4, h5, h6 {
-    font-size: ${dimensions.headingSizes.h4}rem;
+    font-size: ${dimensions.headingSizes.h4}px;
   }
 
   p {

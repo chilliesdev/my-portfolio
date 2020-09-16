@@ -1,12 +1,8 @@
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
+
 import { colors } from './defaults/variables'
 
-export default styled(Link)`
+export default styled.p`
   color: ${colors.secondary};
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
+  line-height: 12px;
 `

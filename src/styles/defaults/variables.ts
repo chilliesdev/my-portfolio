@@ -1,11 +1,34 @@
 /* eslint-disable max-len */
 
-export const colors = {
+export interface ColorProps {
+  primary: string
+  secondary: string
+  brand: string
+  lilac: string
+  accent: string
+  success: string
+  warning: string
+  ui: {
+    bright: string
+    light: string
+    whisper: string
+  }
+  code: string
+  gray: {
+    dark: string
+    copy: string
+    calm: string
+  }
+  white: string
+  black: string
+}
+
+export const colors: ColorProps = {
   primary: '#000000',
   secondary: '#FFFFFF',
   brand: '#000000',
   lilac: '#FFFFFF',
-  accent: '#003459',
+  accent: '#D80032',
   success: '#37b635',
   warning: '#ec1818',
   ui: {
@@ -52,16 +75,16 @@ export const dimensions = {
     large: 18
   },
   headingSizes: {
-    h1: 2.8125,
-    h2: 2,
-    h3: 1.563,
-    h4: 1.25
+    h1: 45,
+    h2: 32,
+    h3: 25,
+    h4: 20
   },
   lineHeight: {
     regular: 1.45,
     heading: 1.2
   },
-  containerPadding: 1.5
+  containerPadding: 0
 }
 
 export const heights = {

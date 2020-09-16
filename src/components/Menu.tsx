@@ -22,7 +22,6 @@ const Menu: React.FC = () => {
 
   const handleOpen = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault()
-    console.log('clicked')
     setOpen(!open)
   }
 
@@ -32,8 +31,7 @@ const Menu: React.FC = () => {
       <StyledMenu open={open}>
         {menuLinks.map(({ name, url }) => (
           <MenuItem key={name}>
-            <MenuLink href={url}>{name}</MenuLink>
-            {active === url && <MenuActiveItem />}
+            <MenuLink to={url}>{name}</MenuLink>
           </MenuItem>
         ))}
       </StyledMenu>
