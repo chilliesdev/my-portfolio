@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
 
 const useScrollHandler = () => {
-  const [scroll, setScroll] = useState<boolean>(true)
+  const scrollCheck = () => window.scrollY < 10
+
+  const [scroll, setScroll] = useState<boolean>(false)
+
+  useEffect(() => {
+    setScroll(scrollCheck())
+  }, [])
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollCheck: boolean = window.scrollY < 10
-      if (scrollCheck !== scroll) {
-        setScroll(scrollCheck)
-      }
+      setScroll(scrollCheck())
     }
 
     document.addEventListener('scroll', onScroll)

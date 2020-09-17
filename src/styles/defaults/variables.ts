@@ -81,7 +81,7 @@ export const dimensions = {
     h4: 20
   },
   lineHeight: {
-    regular: 1.45,
+    regular: 1,
     heading: 1.2
   },
   containerPadding: 0
@@ -89,4 +89,9 @@ export const dimensions = {
 
 export const heights = {
   header: 60
+}
+
+export const margins = {
+  small: 20,
+  large: 80
 }

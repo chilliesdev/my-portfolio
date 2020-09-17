@@ -4,7 +4,7 @@ import Page from '../components/Page'
 import IndexLayout from '../layouts'
 import Featured from '../components/Featured'
 
-import { projects } from '../data/projects'
+import { projects } from '../data'
 
 const IndexPage = () => {
   const [currentFeature, setCurrentFeature] = useState<number>(0)

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { colors } from './defaults/variables'
+import { colors, margins } from './defaults/variables'
 
 interface Props {
   image: string
@@ -16,7 +16,7 @@ export default styled.div<Props>`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -20px;
+  margin-left: -${margins.large}px;
 
   &::after {
     content: '';

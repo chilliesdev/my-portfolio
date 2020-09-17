@@ -4,6 +4,7 @@ import { colors } from './defaults/variables'
 
 export default styled(Link)`
   color: ${colors.secondary};
+  outline: none;
 
   &:hover,
   &:focus {
