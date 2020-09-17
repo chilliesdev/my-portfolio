@@ -12,6 +12,7 @@ import StoryText from '../styles/StoryText'
 import Skills from '../components/Skills'
 import Subtitle from '../styles/Subtitle'
 import Expericence from '../components/Experience'
+import Recommended from '../components/Recommended'
 
 const About = () => (
   <IndexLayout>
@@ -48,6 +49,9 @@ const About = () => (
           <SectionCol>
             <Expericence />
           </SectionCol>
+        </Section>
+        <Section display="block">
+          <Recommended />
         </Section>
       </Container>
     </Page>

@@ -5,6 +5,7 @@ interface ProjectProps {
   featured: boolean
   description: string
   image: string
+  slug: string
 }
 
 export const projects: ProjectProps[] = [
@@ -13,14 +14,16 @@ export const projects: ProjectProps[] = [
     name: 'Lorem ipsum dolor',
     featured: true,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.`,
-    image: 'project-1.jpg'
+    image: 'project-1.jpg',
+    slug: 'first'
   },
   {
     id: 2,
     name: 'Lorem ipsum dolor',
     featured: true,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.`,
-    image: 'project-2.jpg'
+    image: 'project-2.jpg',
+    slug: 'second'
   }
 ]
 
@@ -74,3 +77,5 @@ export const experience: { id: number; date: string; company: string; descriptio
     role: 'engineer'
   }
 ]
+
+export const recommended: number[] = [1, 2]
