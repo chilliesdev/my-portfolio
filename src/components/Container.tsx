@@ -3,8 +3,13 @@ import StyledContainer from '../styles/StyledContainer'
 
 interface ContainerProps {
   className?: string
+  margin?: 'lg'
 }
 
-const Container: React.FC<ContainerProps> = ({ children, className }) => <StyledContainer className={className}>{children}</StyledContainer>
+const Container: React.FC<ContainerProps> = ({ children, className, margin }) => (
+  <StyledContainer className={className} margin={margin}>
+    {children}
+  </StyledContainer>
+)
 
 export default Container

@@ -14,11 +14,11 @@ export default styled.div<Props>`
   background: linear-gradient(${colors.primary}80, ${colors.primary}80),
     url(${({ image }) => (image ? `./images/${image}` : `./images/home.jpg`)}) no-repeat;
   background-size: cover;
-  /* display: ${({ open }) => (open ? `flex` : `none`)}; */
+  /* z-index: ${({ open }) => (open ? 1 : 0)}; */
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: ${({ open }) => (open ? `0` : `-99rem`)};
-  transition: all ease-in-out 500ms;
+  right: ${({ open }) => (open ? `0` : `-99rem`)};
+  transition: all linear 1s;
 `

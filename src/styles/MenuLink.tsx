@@ -6,7 +6,9 @@ export default styled(Link)`
   color: ${colors.secondary};
   font-size: ${dimensions.fontSize.large}px;
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
+    outline: none;
   }
 `

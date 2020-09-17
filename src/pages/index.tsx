@@ -9,7 +9,6 @@ import { projects } from '../data/projects'
 const IndexPage = () => {
   const [currentFeature, setCurrentFeature] = useState<number>(0)
   const maxFeature: number = projects.length
-  console.log({ maxFeature })
 
   const nextFeature = () => {
     return setCurrentFeature(prevState => (prevState === maxFeature ? 0 : prevState + 1))
@@ -34,7 +33,6 @@ const IndexPage = () => {
                   heading: name,
                   body: description,
                   image,
-                  // TODO add based on last featured
                   arrowBtn: checkLastFeature(id) ? 'go to home' : 'next featured project',
                   secondaryBtn: '',
                   accentBtn: ''
