@@ -1,6 +1,8 @@
 ---
 layout: project
-title: 'Example Markdown page'
+title: 'Project 1'
+image: 'project-1.jpg'
+slug: 'project-1'
 ---
 
 Now we're writing in Markdown! Pretty nice, huh?
