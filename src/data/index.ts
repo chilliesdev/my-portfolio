@@ -28,7 +28,7 @@ export const projects: ProjectProps[] = [
     name: 'Lorem ipsum dolor',
     featured: true,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.`,
-    image: 'project-1.jpg',
+    image: 'projectOne',
     slug: 'first'
   },
   {
@@ -36,7 +36,7 @@ export const projects: ProjectProps[] = [
     name: 'Lorem ipsum dolor',
     featured: true,
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.`,
-    image: 'project-2.jpg',
+    image: 'projectTwo',
     slug: 'second'
   }
 ]

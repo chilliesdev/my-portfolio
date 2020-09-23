@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { colors } from './defaults/variables'
 
 interface Props {
-  image?: string
+  image: string
   open: boolean
 }
 
@@ -12,7 +12,7 @@ export default styled.div<Props>`
   padding: 0;
   margin: 0;
   background: linear-gradient(${colors.primary}80, ${colors.primary}80),
-    url(${({ image }) => (image ? `./images/${image}` : `./images/home.jpg`)}) no-repeat;
+    url(${({ image }) => image}) no-repeat;
   background-size: cover;
   /* z-index: ${({ open }) => (open ? 1 : 0)}; */
   display: flex;

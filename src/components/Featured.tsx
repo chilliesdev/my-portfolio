@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useStaticQuery, graphql } from 'gatsby'
 import StyledFeatured from '../styles/StyledFeatured'
 import FeaturedWrapper from '../styles/FeaturedWrapper'
 import FeaturedHeading from '../styles/FeaturedHeading'
@@ -37,8 +38,20 @@ const defaults: Defaults = {
 }
 
 const Featured: React.FC<Props> = ({ details, open, onNext }) => {
+  const data: {
+    file: {
+      id: string
+    }
+  } = useStaticQuery(graphql`
+    query Background {
+      file(base: { eq: "home.jpg" }) {
+        id
+      }
+    }
+  `)
+
   return (
-    <StyledFeatured image={details?.image} open={open}>
+    <StyledFeatured image={details.image || data.file.id} open={open}>
       <FeaturedWrapper open={open}>
         <FeaturedHeading>{details ? details.heading : defaults.heading}</FeaturedHeading>
         <FeaturedBody>{details ? details.body : defaults.body}</FeaturedBody>
