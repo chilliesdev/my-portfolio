@@ -8,34 +8,28 @@ import Featured from '../components/Featured'
 import { projects } from '../data'
 
 interface BackgroundProps {
-  file: {
-    id: string
+  allFile: {
+    edges: {
+      node: {
+        base: string
+        publicURL: string
+      }
+    }[]
   }
 }
-
 const IndexPage = () => {
-  const projectOneBackground: BackgroundProps = useStaticQuery(graphql`
-    query Background {
-      file(base: { eq: "project-1.jpg" }) {
-        id
+  const allAssets: BackgroundProps = useStaticQuery(graphql`
+    query HomeBackground {
+      allFile {
+        edges {
+          node {
+            base
+            publicURL
+          }
+        }
       }
     }
   `)
-
-  const projectTwoBackground: BackgroundProps = useStaticQuery(graphql`
-    query Background {
-      file(base: { eq: "project-2.jpg" }) {
-        id
-      }
-    }
-  `)
-
-  const ProjectBackgroundRelativePath: {
-    [key: string]: string
-  } = {
-    projectOne: projectOneBackground.file.id,
-    projectTwo: projectTwoBackground.file.id
-  }
 
   const [currentFeature, setCurrentFeature] = useState<number>(0)
   const maxFeature: number = projects.length
@@ -47,15 +41,20 @@ const IndexPage = () => {
   const opennedFeature = (id: number) => id === currentFeature && true
 
   const checkLastFeature = (id: number) => id === maxFeature && true
-
-  const getProjectBackgroundImage = (name: string) => ProjectBackgroundRelativePath[name]
-
   return (
     <IndexLayout>
       <Page>
         <Featured onNext={nextFeature} open={opennedFeature(0)} />
-        {projects.map(
-          ({ id, name, description, featured, image }) =>
+        {projects.map(({ id, name, description, featured, image }) => {
+          const backgroundPath: {
+            node: {
+              base: string
+              publicURL: string
+            }
+          }[] = allAssets.allFile.edges.filter(({ node }) => node.base === image)
+
+          // console.log({ projectOneBackground, backgroundPath, image })
+          return (
             featured && (
               <Featured
                 key={id}
@@ -64,14 +63,15 @@ const IndexPage = () => {
                 details={{
                   heading: name,
                   body: description,
-                  image: getProjectBackgroundImage(image),
+                  image: backgroundPath[0].node.publicURL,
                   arrowBtn: checkLastFeature(id) ? 'go to home' : 'next featured project',
                   secondaryBtn: '',
                   accentBtn: ''
                 }}
               />
             )
-        )}
+          )
+        })}
       </Page>
     </IndexLayout>
   )

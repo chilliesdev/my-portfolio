@@ -40,18 +40,18 @@ const defaults: Defaults = {
 const Featured: React.FC<Props> = ({ details, open, onNext }) => {
   const data: {
     file: {
-      id: string
+      publicURL: string
     }
   } = useStaticQuery(graphql`
-    query Background {
+    query FeaturedBackground {
       file(base: { eq: "home.jpg" }) {
-        id
+        publicURL
       }
     }
   `)
 
   return (
-    <StyledFeatured image={details.image || data.file.id} open={open}>
+    <StyledFeatured image={details?.image || data.file.publicURL} open={open}>
       <FeaturedWrapper open={open}>
         <FeaturedHeading>{details ? details.heading : defaults.heading}</FeaturedHeading>
         <FeaturedBody>{details ? details.body : defaults.body}</FeaturedBody>
