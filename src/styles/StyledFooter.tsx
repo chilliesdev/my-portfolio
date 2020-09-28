@@ -9,4 +9,5 @@ export default styled.footer`
   display: flex;
   flex-direction: column;
   width: fit-content;
+  z-index: 1;
 `

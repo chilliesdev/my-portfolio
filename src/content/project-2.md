@@ -1,6 +1,11 @@
 ---
+id: 2
 layout: project
-title: 'Example Markdown page'
+title: 'Project 2'
+image: 'project-2.jpg'
+slug: 'project-2'
+description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.'
+featured: true
 ---
 
 Now we're writing in Markdown! Pretty nice, huh?

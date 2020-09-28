@@ -5,26 +5,39 @@ import Page from '../components/Page'
 import IndexLayout from '../layouts'
 import Featured from '../components/Featured'
 
-import { projects } from '../data'
+// import { projects } from '../data'
+import useRelativePath from '../hooks/useRelativePath'
 
-interface BackgroundProps {
-  allFile: {
+interface Props {
+  allMarkdownRemark: {
     edges: {
       node: {
-        base: string
-        publicURL: string
+        frontmatter: {
+          id: number
+          featured: boolean
+          description: string
+          image: string
+          slug: string
+          title: string
+        }
       }
     }[]
   }
 }
 const IndexPage = () => {
-  const allAssets: BackgroundProps = useStaticQuery(graphql`
-    query HomeBackground {
-      allFile {
+  const allProjects: Props = useStaticQuery(graphql`
+    query allProjects {
+      allMarkdownRemark {
         edges {
           node {
-            base
-            publicURL
+            frontmatter {
+              id
+              featured
+              description
+              image
+              slug
+              title
+            }
           }
         }
       }
@@ -32,7 +45,7 @@ const IndexPage = () => {
   `)
 
   const [currentFeature, setCurrentFeature] = useState<number>(0)
-  const maxFeature: number = projects.length
+  const maxFeature: number = allProjects.allMarkdownRemark.edges.length
 
   const nextFeature = () => {
     return setCurrentFeature(prevState => (prevState === maxFeature ? 0 : prevState + 1))
@@ -45,15 +58,9 @@ const IndexPage = () => {
     <IndexLayout>
       <Page>
         <Featured onNext={nextFeature} open={opennedFeature(0)} />
-        {projects.map(({ id, name, description, featured, image }) => {
-          const backgroundPath: {
-            node: {
-              base: string
-              publicURL: string
-            }
-          }[] = allAssets.allFile.edges.filter(({ node }) => node.base === image)
+        {allProjects.allMarkdownRemark.edges.map(({ node }) => {
+          const { id, title, description, featured, image } = node.frontmatter
 
-          // console.log({ projectOneBackground, backgroundPath, image })
           return (
             featured && (
               <Featured
@@ -61,9 +68,9 @@ const IndexPage = () => {
                 onNext={nextFeature}
                 open={opennedFeature(id)}
                 details={{
-                  heading: name,
+                  heading: title,
                   body: description,
-                  image: backgroundPath[0].node.publicURL,
+                  image: useRelativePath(image),
                   arrowBtn: checkLastFeature(id) ? 'go to home' : 'next featured project',
                   secondaryBtn: '',
                   accentBtn: ''
