@@ -4,10 +4,10 @@ import { useStaticQuery, graphql } from 'gatsby'
 import StyledFeatured from '../styles/StyledFeatured'
 import FeaturedWrapper from '../styles/FeaturedWrapper'
 import FeaturedHeading from '../styles/FeaturedHeading'
-import FeaturedBody from '../styles/FeaturedBody'
 import Button from '../styles/Button'
 import FeaturedButtonWrapper from '../styles/FeaturedButtonWrapper'
 import ArrowButton from './ArrowButton'
+import BodyText from '../styles/BodyText'
 
 interface Props {
   details?: {
@@ -54,7 +54,7 @@ const Featured: React.FC<Props> = ({ details, open, onNext }) => {
     <StyledFeatured image={details?.image || data.file.publicURL} open={open}>
       <FeaturedWrapper open={open}>
         <FeaturedHeading>{details ? details.heading : defaults.heading}</FeaturedHeading>
-        <FeaturedBody>{details ? details.body : defaults.body}</FeaturedBody>
+        <BodyText>{details ? details.body : defaults.body}</BodyText>
         <FeaturedButtonWrapper>
           <Button color="accent">{details ? 'details' : defaults.accentBtn}</Button>
           {details && <Button color="secondary">all projects</Button>}
