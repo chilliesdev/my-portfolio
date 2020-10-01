@@ -7,42 +7,10 @@ import Featured from '../components/Featured'
 
 // import { projects } from '../data'
 import useRelativePath from '../hooks/useRelativePath'
+import useAllProjects, { AllProjectsProps } from '../hooks/useAllProjects'
 
-interface Props {
-  allMarkdownRemark: {
-    edges: {
-      node: {
-        frontmatter: {
-          id: number
-          featured: boolean
-          description: string
-          image: string
-          slug: string
-          title: string
-        }
-      }
-    }[]
-  }
-}
 const IndexPage = () => {
-  const allProjects: Props = useStaticQuery(graphql`
-    query allProjects {
-      allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              id
-              featured
-              description
-              image
-              slug
-              title
-            }
-          }
-        }
-      }
-    }
-  `)
+  const allProjects: AllProjectsProps = useAllProjects()
 
   const [currentFeature, setCurrentFeature] = useState<number>(0)
   const maxFeature: number = allProjects.allMarkdownRemark.edges.length
