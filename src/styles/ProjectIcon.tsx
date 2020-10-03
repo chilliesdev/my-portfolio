@@ -6,7 +6,7 @@ import SubHeading from './SubHeading'
 import BodyText from './BodyText'
 import AccentText from './AccentText'
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   image: string
   title: string
   details: {
@@ -17,8 +17,8 @@ interface Props {
 }
 
 const ProjectIcon: React.FC<Props> = ({ image, title, details }) => (
-  <StyledProjectIcon>
-    <ProjectImage image={image} title={title} />
+  <StyledProjectIcon className="project-icon">
+    <ProjectImage image={image} title={title} className="grid-image" />
     <SubHeading>
       <Link to={`/${details.slug}`}>{title}</Link>
     </SubHeading>
