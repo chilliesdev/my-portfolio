@@ -18,7 +18,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const ProjectIcon: React.FC<Props> = ({ image, title, details }) => (
   <StyledProjectIcon className="project-icon">
-    <ProjectImage image={image} title={title} className="grid-image" />
+    <ProjectImage slug={details.slug} image={image} title={title} className="grid-image" large />
     <SubHeading>
       <Link to={`/${details.slug}`}>{title}</Link>
     </SubHeading>

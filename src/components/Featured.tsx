@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { useStaticQuery, graphql } from 'gatsby'
+
 import StyledFeatured from '../styles/StyledFeatured'
 import FeaturedWrapper from '../styles/FeaturedWrapper'
 import FeaturedHeading from '../styles/FeaturedHeading'
@@ -56,8 +56,14 @@ const Featured: React.FC<Props> = ({ details, open, onNext }) => {
         <FeaturedHeading>{details ? details.heading : defaults.heading}</FeaturedHeading>
         <BodyText>{details ? details.body : defaults.body}</BodyText>
         <FeaturedButtonWrapper>
-          <Button color="accent">{details ? 'details' : defaults.accentBtn}</Button>
-          {details && <Button color="secondary">all projects</Button>}
+          <Button to={details ? '/' : '/about'} color="accent">
+            {details ? 'details' : defaults.accentBtn}
+          </Button>
+          {details && (
+            <Button to="/portfolio" color="secondary">
+              all projects
+            </Button>
+          )}
         </FeaturedButtonWrapper>
         <ArrowButton onClick={onNext}>{details ? details.arrowBtn : defaults.arrow}</ArrowButton>
       </FeaturedWrapper>

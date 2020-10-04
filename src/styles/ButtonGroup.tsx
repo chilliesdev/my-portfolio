@@ -4,7 +4,7 @@ export default styled.div`
   display: flex;
   justify-content: space-between;
 
-  button {
+  a {
     margin: 8px;
   }
 `

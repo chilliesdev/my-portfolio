@@ -9,13 +9,16 @@ import useRelativePath from '../hooks/useRelativePath'
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   image: string
   title: string
+  slug: string
+  large?: boolean
 }
 
-const ProjectImage: React.FC<Props> = ({ image, title, className }) => {
+const ProjectImage: React.FC<Props> = ({ image, title, className, large, slug }) => {
   const [hover, setHover] = useState<boolean>(false)
 
   return (
     <StyledProjectImage
+      large={large}
       className={className}
       hover={hover}
       onMouseOver={() => setHover(true)}
@@ -24,8 +27,12 @@ const ProjectImage: React.FC<Props> = ({ image, title, className }) => {
     >
       <SubHeading>{title}</SubHeading>
       <ButtonGroup>
-        <Button color="accent">details</Button>
-        <Button color="secondary">live preview</Button>
+        <Button to={`/${slug}`} color="accent">
+          details
+        </Button>
+        <Button to={`/${slug}`} color="secondary">
+          live preview
+        </Button>
       </ButtonGroup>
     </StyledProjectImage>
   )

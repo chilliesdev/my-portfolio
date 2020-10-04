@@ -13,33 +13,7 @@ import sass from '../assets/skills/sass.svg'
 import typescript from '../assets/skills/typescript.svg'
 import wordpress from '../assets/skills/wordpress.svg'
 
-interface ProjectProps {
-  id: number
-  name: string
-  featured: boolean
-  description: string
-  image: string
-  slug: string
-}
-
-export const projects: ProjectProps[] = [
-  {
-    id: 1,
-    name: 'Lorem ipsum dolor',
-    featured: true,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.`,
-    image: 'project-1.jpg',
-    slug: 'first'
-  },
-  {
-    id: 2,
-    name: 'Lorem ipsum dolor',
-    featured: true,
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.`,
-    image: 'project-2.jpg',
-    slug: 'second'
-  }
-]
+export const featured: number[] = [1, 2, 3]
 
 export const contacts: string[] = ['mathewkayode116@gmail.com', '+234 (0)801 234 5678']
 

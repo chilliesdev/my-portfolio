@@ -6,7 +6,7 @@ image: 'project-1.jpg'
 slug: 'project-5'
 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.'
 tech: 'HTML, CSS and Javascript'
-featured: true
+featured: false
 ---
 
 Now we're writing in Markdown! Pretty nice, huh?
