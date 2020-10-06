@@ -1,8 +1,5 @@
 import React from 'react'
-import { contacts as contactDetails } from '../data'
-
-import GithubIcon from '../assets/Github.svg'
-import LinkedinIcon from '../assets/Linkedin.svg'
+import { contacts as contactDetails, profiles } from '../data'
 
 import StyledFooter from '../styles/StyledFooter'
 import FooterInner from '../styles/FooterInner'
@@ -11,16 +8,20 @@ import FooterIconWrapper from '../styles/FooterIconWrapper'
 import FooterContactWrapper from '../styles/FooterContactWrapper'
 import FooterContact from '../styles/FooterContact'
 
-import FooterIcon from '../styles/FooterIcon'
+import Icon from '../styles/Icon'
 import DotIcon from '../styles/DotIcon'
+import useRelativePath from '../hooks/useRelativePath'
 
 const Footer: React.FC = () => (
   <StyledFooter>
     <FooterInner>
       <FooterHeading>Contacts</FooterHeading>
       <FooterIconWrapper>
-        <FooterIcon src={GithubIcon} />
-        <FooterIcon src={LinkedinIcon} />
+        {profiles.map(({ id, url, icon }) => (
+          <a key={id} href={url} target="_blank" rel="noreferrer">
+            <Icon src={useRelativePath(icon)} />
+          </a>
+        ))}
       </FooterIconWrapper>
       <FooterContactWrapper>
         {contactDetails.map((contact, idx) => (

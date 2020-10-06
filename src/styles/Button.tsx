@@ -20,7 +20,8 @@ export default styled(Link)<Props>`
   font-family: ${fonts.dmSans};
   font-size: ${dimensions.fontSize.regular};
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
     background: ${colors.primary};
     border: ${colors.secondary} solid 1px;

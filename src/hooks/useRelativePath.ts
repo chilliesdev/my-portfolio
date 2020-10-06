@@ -32,7 +32,7 @@ const useRelativePath = (fileName: string) => {
     }
   }[] = allAssets.allFile.edges.filter(({ node }) => node.base === fileName)
 
-  return Path[0].node.publicURL
+  return Path[0].node.publicURL || 'ERR:Image Not Found'
 }
 
 export default useRelativePath

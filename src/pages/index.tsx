@@ -26,7 +26,7 @@ const IndexPage = () => {
       <Page>
         <Featured onNext={nextFeature} open={opennedFeature(0)} />
         {featuredProjects.allMarkdownRemark.edges.map(({ node }) => {
-          const { id, title, description, image } = node.frontmatter
+          const { id, title, description, image, slug } = node.frontmatter
 
           return (
             <Featured
@@ -38,8 +38,8 @@ const IndexPage = () => {
                 body: description,
                 image: useRelativePath(image),
                 arrowBtn: checkLastFeature(id) ? 'go to home' : 'next featured project',
-                secondaryBtn: '',
-                accentBtn: ''
+                secondaryBtn: '/portfolio',
+                accentBtn: `/${slug}`
               }}
             />
           )

@@ -6,7 +6,6 @@ export interface AllProjectsProps {
       node: {
         frontmatter: {
           id: number
-          featured: boolean
           description: string
           image: string
           slug: string
@@ -26,7 +25,6 @@ const useRelativePath = (id?: number | number[]) => {
           node {
             frontmatter {
               id
-              featured
               description
               image
               slug

@@ -6,7 +6,15 @@ image: 'project-2.jpg'
 slug: 'project-2'
 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.'
 tech: 'HTML, CSS and Javascript'
-featured: true
+allTech: [1,2,3]
+source: 'http://github/chilldev/project'
+url: 'http://project.herokuapp.com'
+features: [
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet. Cursus  euismod quis viverra nibh cras pulvinar mattis nunc.',
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet. Cursus  euismod quis viverra nibh cras pulvinar mattis nunc.',
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet. Cursus  euismod quis viverra nibh cras pulvinar mattis nunc.'
+  ]
+
 ---
 
 Now we're writing in Markdown! Pretty nice, huh?

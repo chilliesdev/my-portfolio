@@ -1,13 +1,13 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 
 import StyledFeatured from '../styles/StyledFeatured'
 import FeaturedWrapper from '../styles/FeaturedWrapper'
-import FeaturedHeading from '../styles/FeaturedHeading'
+import Heading from '../styles/Heading'
 import Button from '../styles/Button'
 import FeaturedButtonWrapper from '../styles/FeaturedButtonWrapper'
 import ArrowButton from './ArrowButton'
 import BodyText from '../styles/BodyText'
+import useRelativePath from '../hooks/useRelativePath'
 
 interface Props {
   details?: {
@@ -38,26 +38,14 @@ const defaults: Defaults = {
 }
 
 const Featured: React.FC<Props> = ({ details, open, onNext }) => {
-  const data: {
-    file: {
-      publicURL: string
-    }
-  } = useStaticQuery(graphql`
-    query FeaturedBackground {
-      file(base: { eq: "home.jpg" }) {
-        publicURL
-      }
-    }
-  `)
-
   return (
-    <StyledFeatured image={details?.image || data.file.publicURL} open={open}>
+    <StyledFeatured image={details?.image || useRelativePath('home.jpg')} open={open}>
       <FeaturedWrapper open={open}>
-        <FeaturedHeading>{details ? details.heading : defaults.heading}</FeaturedHeading>
+        <Heading>{details ? details.heading : defaults.heading}</Heading>
         <BodyText>{details ? details.body : defaults.body}</BodyText>
         <FeaturedButtonWrapper>
-          <Button to={details ? '/' : '/about'} color="accent">
-            {details ? 'details' : defaults.accentBtn}
+          <Button to={details ? details.accentBtn : '/about'} color="accent">
+            details
           </Button>
           {details && (
             <Button to="/portfolio" color="secondary">
