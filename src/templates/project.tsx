@@ -15,9 +15,10 @@ import Button from '../styles/Button'
 import Heading from '../styles/Heading'
 import ProjectContent from '../styles/ProjectContent'
 import ProjectList from '../styles/ProjectList'
-import ProjectFeatureItem from '../styles/ProjectFeatureItem'
+import ProjectListItem from '../styles/ProjectListItem'
 import ProjectListNumbering from '../styles/ProjectListNumbering'
 import ProjectListText from '../styles/ProjectListText'
+import { skills } from '../data'
 
 interface ProjectTemplateProps {
   data: {
@@ -45,6 +46,8 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
 
   const adjustNumbering = (i: number) => (i < 10 ? `0${i + 1}` : i + 1)
 
+  const getSkillDetails = (techId: number) => skills.filter(skill => skill.id === techId)
+
   return (
     <IndexLayout>
       <Page>
@@ -66,15 +69,32 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               </Button>
             </SectionCol>
           </Section>
+          {allTech ? (
+            <Section>
+              <Heading>Technologies</Heading>
+              <ProjectList>
+                {allTech.map((techId, idx) => {
+                  const skillDetails = getSkillDetails(techId)
+
+                  return (
+                    <ProjectListItem>
+                      <ProjectListNumbering>{adjustNumbering(idx)}</ProjectListNumbering>
+                      <ProjectListText large>{skillDetails[0].title}</ProjectListText>
+                    </ProjectListItem>
+                  )
+                })}
+              </ProjectList>
+            </Section>
+          ) : null}
           {features ? (
             <Section>
               <Heading>Features</Heading>
               <ProjectList>
                 {features.map((feature, idx) => (
-                  <ProjectFeatureItem>
+                  <ProjectListItem flex>
                     <ProjectListNumbering>{adjustNumbering(idx)}</ProjectListNumbering>
                     <ProjectListText>{feature}</ProjectListText>
-                  </ProjectFeatureItem>
+                  </ProjectListItem>
                 ))}
               </ProjectList>
             </Section>

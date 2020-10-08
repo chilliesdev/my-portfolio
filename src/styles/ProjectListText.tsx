@@ -1,7 +1,11 @@
 import styled from '@emotion/styled'
-// import { dimensions } from './defaults/variables'
+import { dimensions } from './defaults/variables'
 
-export default styled.span`
-  /* margin-right: 1rem; */
+interface Props {
+  large?: boolean
+}
+
+export default styled.span<Props>`
+  font-size: ${({ large }) => (large ? dimensions.fontSize.large : dimensions.fontSize.regular)}px;
   height: 100%;
 `

@@ -19,5 +19,5 @@ export default styled.div<Props>`
   align-items: center;
   position: absolute;
   right: ${({ open }) => (open ? `0` : `-99rem`)};
-  transition: all linear 1s;
+  transition: all linear 800ms 300ms;
 `
