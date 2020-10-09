@@ -9,7 +9,7 @@ import ThemeBtn from './ThemeBtn'
 import Menu from './Menu'
 import HeaderInnerBtnGroup from '../styles/HeaderInnerBtnGroup'
 
-const Header: React.FC = () => {
+const Header: React.FC<{ themeHandler: () => void }> = ({ themeHandler }) => {
   const atTop: boolean = useScrollHandler()
 
   return (
@@ -17,7 +17,7 @@ const Header: React.FC = () => {
       <HeaderInner>
         <Logo />
         <HeaderInnerBtnGroup>
-          <ThemeBtn />
+          <ThemeBtn onClick={themeHandler} />
           <Menu />
         </HeaderInnerBtnGroup>
       </HeaderInner>
