@@ -8,14 +8,14 @@ interface Props {
 }
 
 export default styled(Link)<Props>`
-  color: ${colors.secondary};
-  background: ${({ color }) => (color === 'secondary' ? '#FFFFFF00' : colors[color as keyof ColorProps])};
+  color: ${({ theme }) => theme.secondary};
+  background: ${({ color, theme }) => (color === 'secondary' ? '#FFFFFF00' : theme[color as keyof ColorProps])};
   width: 150px;
   height: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: ${({ color }) => colors[color as keyof ColorProps]} solid 1px;
+  border: ${({ color, theme }) => theme[color as keyof ColorProps]} solid 1px;
   text-transform: uppercase;
   font-family: ${fonts.dmSans};
   font-size: ${dimensions.fontSize.regular};
@@ -23,8 +23,8 @@ export default styled(Link)<Props>`
   &:hover,
   &:focus {
     text-decoration: none;
-    background: ${colors.primary};
-    border: ${colors.secondary} solid 1px;
+    background: ${({ theme }) => theme.primary};
+    border: ${({ theme }) => theme.secondary} solid 1px;
     transition: all ease-in-out 500ms;
   }
 `

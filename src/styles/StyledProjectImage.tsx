@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { colors, margins } from './defaults/variables'
+import { margins } from './defaults/variables'
 
 interface Props {
   background: string
@@ -21,7 +21,7 @@ export default styled.div<Props>`
   transition: all ease-in-out 1s;
 
   &:hover {
-    background: ${colors.primary};
+    background: ${({ theme }) => theme.primary};
     /* transform: rotateX(0deg); */
   }
 

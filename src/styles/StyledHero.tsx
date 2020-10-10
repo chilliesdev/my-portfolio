@@ -11,7 +11,7 @@ export default styled.div<Props>`
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  background: linear-gradient(${colors.primary}80, ${colors.primary}80), url(${({ image }) => `${image}`}) no-repeat;
+  background: linear-gradient(${({ theme }) => `${theme.primary}80, ${theme.primary}80`}), url(${({ image }) => `${image}`}) no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;

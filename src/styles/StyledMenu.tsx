@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { colors, fonts } from './defaults/variables'
+import { fonts } from './defaults/variables'
 
 interface Props {
   open: boolean
@@ -16,6 +16,6 @@ export default styled.ul<Props>`
   height: 100vh;
   padding-top: 7rem;
   font-family: ${fonts.questrial};
-  background: ${colors.primary};
+  background: ${({ theme }) => theme.primary};
   transition: all ease-in-out 500ms;
 `

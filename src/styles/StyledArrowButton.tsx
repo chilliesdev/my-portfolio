@@ -1,9 +1,7 @@
 import styled from '@emotion/styled'
 
-import { colors } from './defaults/variables'
-
 export default styled.button`
-  color: ${colors.secondary};
+  color: ${props => props.theme.secondary};
   text-transform: uppercase;
   background-color: inherit;
   border: none;

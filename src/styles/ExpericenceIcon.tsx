@@ -1,10 +1,9 @@
 import styled from '@emotion/styled'
-import { colors } from './defaults/variables'
 
 export default styled.div`
   height: 16rem;
   width: 1px;
-  background: ${colors.secondary};
+  background: ${({ theme }) => theme.secondary};
   margin-left: 9px;
 
   /* max-width: 10px; */
@@ -14,15 +13,15 @@ export default styled.div`
   &::after {
     content: '';
     display: block;
-    background: ${colors.secondary};
+    background: ${({ theme }) => theme.secondary};
     position: relative;
   }
 
   &::before {
     height: 20px;
     width: 20px;
-    border: solid ${colors.secondary} 1px;
-    background: ${colors.primary};
+    border: solid ${({ theme }) => theme.secondary} 1px;
+    background: ${({ theme }) => theme.primary};
     right: 9px;
   }
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import StyledProjectIcon from './StyledProjectIcon'
-import ProjectImage from '../components/ProjectImage'
-import SubHeading from './SubHeading'
-import BodyText from './BodyText'
-import AccentText from './AccentText'
+import StyledProjectIcon from '../styles/StyledProjectIcon'
+import ProjectImage from './ProjectImage'
+import SubHeading from '../styles/SubHeading'
+import BodyText from '../styles/BodyText'
+import AccentText from '../styles/AccentText'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   image: string

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
-import { dimensions, colors } from './defaults/variables'
+import { dimensions } from './defaults/variables'
 
 export default styled.span`
   text-transform: capitalize;
-  color: ${colors.secondary};
+  color: ${({ theme }) => theme.secondary};
   font-size: ${dimensions.fontSize.large}px;
   padding-left: 1rem;
 `

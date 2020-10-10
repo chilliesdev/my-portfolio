@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { colors } from './defaults/variables'
 
 interface Props {
   image: string
@@ -11,7 +10,11 @@ export default styled.div<Props>`
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  background: linear-gradient(${colors.primary}80, ${colors.primary}80), url(${({ image }) => image}) no-repeat;
+  background: ${props => {
+      console.log(props.theme.primary)
+      return `linear-gradient(${`${props.theme.primary}00`}, ${`${props.theme.primary}00`})`
+    }},
+    url(${({ image }) => image}) no-repeat;
   background-size: cover;
   z-index: ${({ open }) => (open ? 1 : 0)};
   display: flex;

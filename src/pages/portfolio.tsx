@@ -6,7 +6,7 @@ import Page from '../components/Page'
 import Hero from '../components/Hero'
 import Container from '../components/Container'
 import Section from '../styles/Section'
-import ProjectIcon from '../styles/ProjectIcon'
+import ProjectIcon from '../components/ProjectIcon'
 
 const PortfolioPage: React.FC = () => {
   const AllProjects: AllProjectsProps = useAllProjects()

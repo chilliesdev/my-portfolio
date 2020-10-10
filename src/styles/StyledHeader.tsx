@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { heights, dimensions, colors } from './defaults/variables'
+import { heights, dimensions } from './defaults/variables'
 
 interface Props {
   atTop: boolean
@@ -9,7 +9,7 @@ interface Props {
 export default styled.header<Props>`
   height: ${heights.header}px;
   padding: 0 ${dimensions.containerPadding}rem;
-  background: ${({ atTop }) => (atTop ? `${colors.primary}00` : colors.primary)};
+  background: ${({ atTop, theme }) => (atTop ? `${theme.primary}00` : theme.primary)};
   position: fixed;
   width: 100%;
   z-index: 2;

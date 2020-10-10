@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 
-import { colors, dimensions } from './defaults/variables'
+import { dimensions } from './defaults/variables'
 
 export default styled.p`
-  color: ${colors.accent};
+  color: ${({ theme }) => theme.accent};
   line-height: ${dimensions.lineHeight.regular};
 `

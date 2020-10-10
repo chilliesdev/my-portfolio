@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 
-import { colors, fonts } from './defaults/variables'
+import { fonts } from './defaults/variables'
 
 export default styled.p`
-  color: ${colors.secondary};
+  color: ${({ theme }) => theme.secondary};
   font-family: ${fonts.dmSans};
   font-weight: bold;
 `

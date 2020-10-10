@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import { colors, dimensions } from './defaults/variables'
+import { dimensions } from './defaults/variables'
 
 export default styled(Link)`
-  color: ${colors.secondary};
+  color: ${({ theme }) => theme.secondary};
   font-size: ${dimensions.fontSize.large}px;
 
   &:hover,

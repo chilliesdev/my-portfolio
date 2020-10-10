@@ -1,9 +1,7 @@
 import styled from '@emotion/styled'
 
-import { colors } from './defaults/variables'
-
 export default styled.div`
-  background: ${colors.secondary};
+  background: ${({ theme }) => theme.secondary};
   border: none;
   border-radius: 50%;
   margin: 0;

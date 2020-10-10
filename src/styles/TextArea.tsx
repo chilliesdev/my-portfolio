@@ -1,12 +1,11 @@
 import styled from '@emotion/styled'
-import { colors } from './defaults/variables'
 
 export default styled.textarea`
   display: block;
-  background: ${colors.primary}00;
+  background: ${({ theme }) => theme.primary}00;
   height: 7rem;
   width: 100%;
-  border: solid 1px ${colors.secondary};
+  border: solid 1px ${({ theme }) => theme.secondary};
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -18,6 +17,6 @@ export default styled.textarea`
 
   &:focus {
     outline: none;
-    background: ${colors.secondary};
+    background: ${({ theme }) => theme.secondary};
   }
 `

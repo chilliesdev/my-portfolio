@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { colors } from './defaults/variables'
 
 export default styled.li`
   text-transform: uppercase;
@@ -14,7 +13,7 @@ export default styled.li`
     top: 2.2rem;
     width: 0;
     height: 1px;
-    background: ${colors.secondary};
+    background: ${({ theme }) => theme.secondary};
     transition: all ease-in-out 500ms;
   }
 

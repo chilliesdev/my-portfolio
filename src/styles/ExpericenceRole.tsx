@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
-import { colors, dimensions } from './defaults/variables'
+import { dimensions } from './defaults/variables'
 
 export default styled.p`
   font-size: ${dimensions.fontSize.large}px;
-  color: ${colors.accent};
+  color: ${({ theme }) => theme.accent};
   text-transform: capitalize;
 `
