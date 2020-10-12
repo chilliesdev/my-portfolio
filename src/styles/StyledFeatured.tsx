@@ -11,7 +11,7 @@ export default styled.div<Props>`
   padding: 0;
   margin: 0;
   background: ${props => {
-      console.log(props.theme.primary)
+      console.log(props.theme)
       return `linear-gradient(${`${props.theme.primary}00`}, ${`${props.theme.primary}00`})`
     }},
     url(${({ image }) => image}) no-repeat;
