@@ -27,7 +27,7 @@ export const colors: ColorProps = {
   primary: '#000000',
   secondary: '#FFFFFF',
   brand: '#000000',
-  lilac: '#D3D3D3',
+  lilac: '#003459',
   accent: '#D80032',
   success: '#37b635',
   warning: '#ec1818',

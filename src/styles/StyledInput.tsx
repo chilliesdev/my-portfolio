@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 export default styled.input`
     background: ${({ theme }) => theme.primary}00;

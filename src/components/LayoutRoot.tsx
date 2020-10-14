@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import { Global, css } from '@emotion/core'
+import React from 'react'
+// import { Global, css } from '@emotion/core'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/defaults/globalStyles'
 import { darkTheme, lightTheme } from '../styles/defaults/theme'
-import normalize from '../styles/defaults/normalize'
 import StyledLayoutRoot from '../styles/StyledLayoutRoot'
 
 interface LayoutRootProps {

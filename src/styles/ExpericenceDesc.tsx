@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 import { dimensions } from './defaults/variables'
 
 export default styled.p`

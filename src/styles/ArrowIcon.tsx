@@ -1,9 +1,9 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 export default styled.div`
   height: 1px;
   width: 100%;
-  background: ${({ theme }) => theme.secondary};
+  background: ${props => props.theme.secondary};
   margin: 1rem 0;
   margin-bottom: 7px;
 
@@ -13,7 +13,7 @@ export default styled.div`
     display: block;
     height: 1px;
     width: 12px;
-    background: ${({ theme }) => theme.secondary};
+    background: ${props => props.theme.secondary};
     position: relative;
     left: calc(100% - 11px);
   }
