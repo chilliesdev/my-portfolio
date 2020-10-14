@@ -10,7 +10,7 @@ export default styled.div<Props>`
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  background: ${props => `linear-gradient(${`${props.theme.primary}80`}, ${`${props.theme.primary}80`})`},
+  background: ${props => `linear-gradient(${`${props.theme.primary}90`}, ${`${props.theme.primary}90`})`},
     url(${({ image }) => image}) no-repeat;
   background-size: cover;
   z-index: ${({ open }) => (open ? 1 : 0)};

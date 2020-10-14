@@ -11,8 +11,10 @@ interface LayoutRootProps {
 }
 
 const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, theme }) => {
+  const getTheme = () => (theme === 'light' ? lightTheme : darkTheme)
+
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={getTheme}>
       <GlobalStyles />
       <StyledLayoutRoot className={className}>{children}</StyledLayoutRoot>
     </ThemeProvider>
