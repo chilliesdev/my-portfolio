@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, margins } from './defaults/variables'
+import { margins } from './defaults/variables'
 
 interface Props {
   image: string
@@ -24,7 +24,7 @@ export default styled.div<Props>`
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background: ${colors.primary};
+    background: ${props => props.theme.primary};
     margin: 0;
     padding: 0;
     opacity: ${({ atTop }) => (atTop ? 0 : 1)};

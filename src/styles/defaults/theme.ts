@@ -16,7 +16,7 @@ export const darkTheme: DefaultTheme = {
   primary: colors.primary,
   secondary: colors.secondary,
   accent: colors.accent,
-  invert: true
+  invert: false
 }
 
 export const lightTheme: DefaultTheme = {
@@ -24,5 +24,5 @@ export const lightTheme: DefaultTheme = {
   primary: colors.secondary,
   secondary: colors.primary,
   accent: colors.lilac,
-  invert: false
+  invert: true
 }
