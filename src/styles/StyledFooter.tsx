@@ -4,7 +4,7 @@ import { dimensions } from './defaults/variables'
 
 export default styled.footer`
   padding: 0 ${dimensions.containerPadding}rem;
-  background-color: ${({ theme }) => theme.primary}00;
+  background-color: ${({ theme }) => (theme.name === 'light' ? theme.primary : `${theme.primary}00`)};
   color: ${({ theme }) => theme.secondary};
   display: flex;
   flex-direction: column;

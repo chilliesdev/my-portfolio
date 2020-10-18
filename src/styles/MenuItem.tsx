@@ -17,7 +17,7 @@ export default styled.li`
     transition: all ease-in-out 500ms;
   }
 
-  &:hover ::before {
+  &:hover::before {
     width: 110px;
   }
 `

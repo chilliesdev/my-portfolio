@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default styled(Link)<Props>`
-  color: ${({ theme }) => theme.secondary};
+  color: ${({ theme, color }) => (color === 'accent' && theme.name === 'light' ? theme.primary : theme.secondary)};
   background: ${({ color, theme }) => (color === 'secondary' ? '#FFFFFF00' : theme[color as keyof ColorProps])};
   width: 150px;
   height: 50px;
@@ -22,6 +22,7 @@ export default styled(Link)<Props>`
 
   &:hover,
   &:focus {
+    color: ${({ theme, color }) => (theme.name === 'light' ? theme.primary : theme.secondary)};
     text-decoration: none;
     background: ${({ theme }) => (theme.name === 'light' ? theme.secondary : theme.primary)};
     border: ${({ theme }) => theme.secondary} solid 1px;

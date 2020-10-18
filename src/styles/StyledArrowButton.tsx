@@ -14,6 +14,6 @@ export default styled.button`
   transition: all ease-in-out 300ms;
 
   &:hover {
-    width: 350px;
+    width: calc(350px - 1.2rem);
   }
 `
