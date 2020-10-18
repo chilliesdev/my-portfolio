@@ -11,7 +11,10 @@ export default styled.div<Props>`
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  background: linear-gradient(${({ theme }) => `${theme.primary}80, ${theme.primary}80`}), url(${({ image }) => `${image}`}) no-repeat;
+  background: linear-gradient(
+      ${({ theme }) => (theme.name === 'light' ? `${theme.primary}00, ${theme.primary}00` : `${theme.primary}80, ${theme.primary}80`)}
+    ),
+    url(${({ image }) => `${image}`}) no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -28,6 +31,6 @@ export default styled.div<Props>`
     margin: 0;
     padding: 0;
     opacity: ${({ atTop }) => (atTop ? 0 : 1)};
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 500ms 500ms;
   }
 `

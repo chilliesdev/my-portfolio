@@ -7,7 +7,7 @@ import StyledLayoutRoot from '../styles/StyledLayoutRoot'
 
 interface LayoutRootProps {
   className?: string
-  theme: 'light' | 'dark'
+  theme: string
 }
 
 const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, theme }) => {
