@@ -23,7 +23,7 @@ const ContactPage: React.FC = () => {
               <Input placeholder="how can I help you today" large>
                 message
               </Input>
-              <Button to="#" color="secondary">
+              <Button to="#" color="accent">
                 submit
               </Button>
             </Form>

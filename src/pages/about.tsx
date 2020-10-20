@@ -23,12 +23,14 @@ const About = () => (
           <SectionCol size="lg">
             <SubHeading>My story</SubHeading>
           </SectionCol>
-          {story.map((paragraph, idx) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <SectionCol key={idx}>
-              <StoryText>{paragraph}</StoryText>
-            </SectionCol>
-          ))}
+          <Section>
+            {story.map((paragraph, idx) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <SectionCol key={idx}>
+                <StoryText>{paragraph}</StoryText>
+              </SectionCol>
+            ))}
+          </Section>
         </Section>
         <Section>
           <SectionCol>
