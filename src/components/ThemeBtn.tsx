@@ -10,8 +10,20 @@ const ThemeBtn: React.FC<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLIma
 
   return (
     <StyledThemeBtn onClick={onClick}>
-      <Icon transform={theme.name === 'light' && `translateX(-25px)`} src={useRelativePath('Light-mode.svg')} default flex removeMargin />
-      <Icon transform={theme.name === 'light' && `translateX(-25px)`} src={useRelativePath('Night-mode.svg')} default flex removeMargin />
+      <Icon
+        transformValue={theme.name === 'light' && `translateX(-25px)`}
+        src={useRelativePath('Light-mode.svg')}
+        default
+        flex
+        removeMargin
+      />
+      <Icon
+        transformValue={theme.name === 'light' && `translateX(-25px)`}
+        src={useRelativePath('Night-mode.svg')}
+        default
+        flex
+        removeMargin
+      />
     </StyledThemeBtn>
   )
 }

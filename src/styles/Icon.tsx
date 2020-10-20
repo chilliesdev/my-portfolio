@@ -3,14 +3,14 @@ import styled from 'styled-components'
 interface Props {
   default?: boolean
   flex?: boolean
-  transform?: string
+  transformValue?: string | false
   removeMargin?: boolean
 }
 
 export default styled.img<Props>`
   height: 25px;
   width: 25px;
-  transform: ${props => props.transform && props.transform};
+  transform: ${props => props.transformValue && props.transformValue};
   margin-right: ${props => (props.removeMargin ? `0` : `8px`)};
   transition: transform ease-in-out 500ms 500ms;
   ${props => props.flex && `display: flex;`}
