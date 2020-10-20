@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import Icon from '../assets/Light Mode.svg'
+import { ThemeContext } from 'styled-components'
 import StyledThemeBtn from '../styles/StyledThemeBtn'
+import Icon from '../styles/Icon'
+import useRelativePath from '../hooks/useRelativePath'
 
-const ThemeBtn: React.FC<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>> = ({ onClick }) => (
-  <StyledThemeBtn onClick={onClick} src={Icon} />
-)
+const ThemeBtn: React.FC<React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>> = ({ onClick }) => {
+  const theme = useContext(ThemeContext)
+
+  return (
+    <StyledThemeBtn onClick={onClick}>
+      <Icon transform={theme.name === 'light' && `translateX(-25px)`} src={useRelativePath('Light-mode.svg')} default flex removeMargin />
+      <Icon transform={theme.name === 'light' && `translateX(-25px)`} src={useRelativePath('Night-mode.svg')} default flex removeMargin />
+    </StyledThemeBtn>
+  )
+}
 
 export default ThemeBtn

@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
-export default styled.img`
+export default styled.div`
   height: 25px;
   width: 25px;
-  margin-right: 2rem;
-  color: ${({ theme }) => theme.secondary};
+  margin-right: 4rem;
   cursor: pointer;
+  display: flex;
+  transition: transform ease-in-out 500ms 500ms;
+  overflow: hidden;
 `

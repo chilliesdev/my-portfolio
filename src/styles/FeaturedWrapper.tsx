@@ -16,7 +16,6 @@ export default styled.div<Props>`
   ${props =>
     props.theme.name === 'light' &&
     `
-    padding: ${spacing};
     max-width: calc(352px + ${spacing});
   `}
   h2 {
@@ -28,11 +27,11 @@ export default styled.div<Props>`
     display: block;
     filter: ${props => (props.theme.name === 'light' ? `blur(2px)` : `none`)};
     background: ${props => `${props.theme.primary}90`};
-    width: 100%;
-    height: 100%;
+    width: calc(100% + (${spacing} * 2));
+    height: calc(100% + ${spacing});
     position: absolute;
     z-index: -1;
-    left: 0;
-    top: 0;
+    left: -${spacing};
+    top: calc(-${spacing} / 2);
   }
 `

@@ -23,7 +23,7 @@ export default styled.header<Props>`
     content: '';
     display: block;
     filter: ${props => (props.theme.name === 'light' ? `blur(2px)` : `none`)};
-    background: ${props => `${props.theme.primary}90`};
+    background: ${props => (props.theme.name === 'light' ? `${props.theme.primary}90` : `none`)};
     width: 100%;
     height: 100%;
     position: absolute;
