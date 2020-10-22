@@ -11,10 +11,13 @@ interface LayoutRootProps {
 }
 
 const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, theme }) => {
+  const currentPath: string = window.location.pathname
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <StyledLayoutRoot className={className}>{children}</StyledLayoutRoot>
+      <StyledLayoutRoot className={className} handleIndexPageStyle={currentPath === '/' && true}>
+        {children}
+      </StyledLayoutRoot>
     </ThemeProvider>
   )
 }

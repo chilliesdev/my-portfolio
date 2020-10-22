@@ -23,7 +23,7 @@ const IndexPage = () => {
   const checkLastFeature = (id: number) => id === maxFeature && true
   return (
     <IndexLayout>
-      <Page>
+      <Page className="index-page">
         <Featured onNext={nextFeature} open={opennedFeature(0)} />
         {featuredProjects.allMarkdownRemark.edges.map(({ node }) => {
           const { id, title, description, image, slug } = node.frontmatter
