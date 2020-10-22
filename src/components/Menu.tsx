@@ -24,12 +24,14 @@ const Menu: React.FC = () => {
     setOpen(!open)
   }
 
+  const currentPath: string = window.location.pathname
+
   return (
     <>
       <MenuIcon onClick={handleOpen} open={open} />
       <StyledMenu open={open}>
         {menuLinks.map(({ name, url }) => (
-          <MenuItem key={name}>
+          <MenuItem key={name} currentPath={currentPath} link={url}>
             <MenuLink to={url}>{name}</MenuLink>
           </MenuItem>
         ))}
