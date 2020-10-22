@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoints } from './defaults/variables'
 
 export default styled.button`
   color: ${props => props.theme.secondary};
@@ -15,5 +16,13 @@ export default styled.button`
 
   &:hover {
     width: calc(350px - 1.2rem);
+  }
+
+  @media screen and (max-width: ${breakpoints.xs}px) {
+    width: 255px;
+
+    &:hover {
+      width: calc(255px - 1.2rem);
+    }
   }
 `

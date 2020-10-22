@@ -28,7 +28,7 @@ const Footer: React.FC = () => (
           // eslint-disable-next-line react/no-array-index-key
           <React.Fragment key={idx}>
             <FooterContact>{contact}</FooterContact>
-            {idx < contactDetails.length - 1 && <DotIcon />}
+            {idx < contactDetails.length - 1 && <DotIcon contact />}
           </React.Fragment>
         ))}
       </FooterContactWrapper>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoints } from './defaults/variables'
 
 interface Props {
   open: boolean
@@ -13,11 +14,6 @@ export default styled.div<Props>`
   right: ${({ open }) => (open ? `0` : `-99rem`)};
   transition: all ease-in-out 500ms;
   background: none;
-  ${props =>
-    props.theme.name === 'light' &&
-    `
-    max-width: calc(352px + ${spacing});
-  `}
   h2 {
     margin-top: 0;
   }
@@ -33,5 +29,9 @@ export default styled.div<Props>`
     z-index: -1;
     left: -${spacing};
     top: calc(-${spacing} / 2);
+  }
+
+  @media screen and (max-width: ${breakpoints.xs}px) {
+    max-width: 85%;
   }
 `

@@ -4,7 +4,6 @@ import MenuIcon from './MenuIcon'
 import StyledMenu from '../styles/StyledMenu'
 import MenuItem from '../styles/MenuItem'
 import MenuLink from '../styles/MenuLink'
-import MenuActiveItem from '../styles/MenuActiveItem'
 
 const menuLinks: {
   name: string

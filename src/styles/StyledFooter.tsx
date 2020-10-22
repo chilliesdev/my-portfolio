@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { dimensions } from './defaults/variables'
+import { dimensions, breakpoints } from './defaults/variables'
 
 export default styled.footer`
   padding: 0 ${dimensions.containerPadding}rem;
@@ -21,5 +21,9 @@ export default styled.footer`
     height: 100%;
     position: absolute;
     z-index: -1;
+  }
+
+  @media screen and (max-width: ${breakpoints.sm}px) {
+    width: 100%;
   }
 `

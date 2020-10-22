@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { margins } from './defaults/variables'
+import { margins, breakpoints } from './defaults/variables'
 
 interface Props {
   image: string
@@ -32,5 +32,9 @@ export default styled.div<Props>`
     padding: 0;
     opacity: ${({ atTop }) => (atTop ? 0 : 1)};
     transition: all ease-in-out 500ms 500ms;
+  }
+
+  @media screen and (max-width: ${breakpoints.xs}px) {
+    margin: -${margins.small}px;
   }
 `
