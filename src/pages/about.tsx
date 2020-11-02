@@ -52,7 +52,7 @@ const About = () => (
             <Expericence />
           </SectionCol>
         </Section>
-        <Section display="block">
+        <Section display='block'>
           <Recommended />
         </Section>
       </Container>
