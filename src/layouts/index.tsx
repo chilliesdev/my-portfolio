@@ -21,12 +21,17 @@ interface StaticQueryProps {
 }
 
 const IndexLayout: React.FC = ({ children }) => {
-  const themeValueFromStorage: string | null = localStorage.getItem('theme')
+  const getTheme = () => (theme === 'light' ? 'dark' : 'light')
+
+  const getThemeLocalStorage = () => window !== undefined ? localStorage.getItem('theme') : 'light'
+
+  const setThemeLocalStorage = (theme: string) => window !== undefined && localStorage.setItem('theme', theme)
+
+  const themeValueFromStorage: string | null = getThemeLocalStorage()
 
   const [theme, setTheme] = useState<string>(themeValueFromStorage || 'dark')
   const themeToggler = () => {
-    const getTheme = () => (theme === 'light' ? 'dark' : 'light')
-    localStorage.setItem('theme', getTheme())
+    setThemeLocalStorage(getTheme())
     setTheme(getTheme())
   }
 
