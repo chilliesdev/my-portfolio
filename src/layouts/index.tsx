@@ -23,9 +23,9 @@ interface StaticQueryProps {
 const IndexLayout: React.FC = ({ children }) => {
   const getTheme = () => (theme === 'light' ? 'dark' : 'light')
 
-  const getThemeLocalStorage = () => window !== undefined ? localStorage.getItem('theme') : 'light'
+  const getThemeLocalStorage = () => typeof window !== 'undefined' ? localStorage.getItem('theme') : 'light'
 
-  const setThemeLocalStorage = (theme: string) => window !== undefined && localStorage.setItem('theme', theme)
+  const setThemeLocalStorage = (theme: string) => typeof window !== 'undefined' && localStorage.setItem('theme', theme)
 
   const themeValueFromStorage: string | null = getThemeLocalStorage()
 
