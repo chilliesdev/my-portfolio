@@ -45,7 +45,7 @@ const Featured: React.FC<Props> = ({ details, open, onNext }) => {
         <BodyText>{details ? details.body : defaults.body}</BodyText>
         <FeaturedButtonWrapper>
           <Button to={details ? details.accentBtn : '/about'} color="accent">
-            details
+          {details ? 'details' : defaults.accentBtn}
           </Button>
           {details && (
             <Button to="/portfolio" color="secondary">
