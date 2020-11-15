@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -21,17 +21,18 @@ interface StaticQueryProps {
 }
 
 const IndexLayout: React.FC = ({ children }) => {
+
+  const [theme, setTheme] = useState<string>('dark')
+
+  useEffect(() => {
+    const themeValueFromStorage: string | null = localStorage.getItem('theme')
+    setTheme(themeValueFromStorage || 'dark')
+  }, [])
+
   const getTheme = () => (theme === 'light' ? 'dark' : 'light')
 
-  const getThemeLocalStorage = () => typeof window !== 'undefined' ? localStorage.getItem('theme') : 'light'
-
-  const setThemeLocalStorage = (theme: string) => typeof window !== 'undefined' && localStorage.setItem('theme', theme)
-
-  const themeValueFromStorage: string | null = getThemeLocalStorage()
-
-  const [theme, setTheme] = useState<string>(themeValueFromStorage || 'dark')
   const themeToggler = () => {
-    setThemeLocalStorage(getTheme())
+    localStorage.setItem('theme', getTheme())
     setTheme(getTheme())
   }
 
