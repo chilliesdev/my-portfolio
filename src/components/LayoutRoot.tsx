@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 // import { Global, css } from '@emotion/core'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '../styles/defaults/globalStyles'
@@ -11,7 +11,12 @@ interface LayoutRootProps {
 }
 
 const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className, theme }) => {
-  const currentPath: string = window.location.pathname
+  const [currentPath, setCurrentPath] = useState<string>('')
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname)
+  }, [])
+
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />

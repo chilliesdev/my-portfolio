@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import MenuIcon from './MenuIcon'
 import StyledMenu from '../styles/StyledMenu'
@@ -16,15 +16,20 @@ const menuLinks: {
 ]
 
 const Menu: React.FC = () => {
-  const active = '/'
+
   const [open, setOpen] = useState<boolean>(false)
+  const [currentPath, setCurrentPath] = useState<string>('')
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname)
+  }, [])
+
+
 
   const handleOpen = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault()
     setOpen(!open)
   }
-
-  const currentPath: string = window.location.pathname
 
   return (
     <>
