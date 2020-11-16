@@ -33,5 +33,6 @@ export default styled.div<Props>`
 
   @media screen and (max-width: ${breakpoints.xs}px) {
     max-width: 85%;
+    top: -5rem;
   }
 `
