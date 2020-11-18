@@ -42,7 +42,7 @@ interface ProjectTemplateProps {
 }
 
 const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
-  const { id, description, image, slug, title, tech, allTech, source, url, features } = data.markdownRemark.frontmatter
+  const {title, allTech, source, url, features } = data.markdownRemark.frontmatter
 
   const adjustNumbering = (i: number) => (i < 10 ? `0${i + 1}` : i + 1)
 
