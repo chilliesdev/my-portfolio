@@ -19,6 +19,8 @@ import ProjectListItem from '../styles/ProjectListItem'
 import ProjectListNumbering from '../styles/ProjectListNumbering'
 import ProjectListText from '../styles/ProjectListText'
 import { skills } from '../data'
+import GalleryWrapper from '../styles/GalleryWrapper'
+import GalleryImage from '../styles/GalleryImage'
 
 interface ProjectTemplateProps {
   data: {
@@ -36,13 +38,19 @@ interface ProjectTemplateProps {
         source: string
         url: string
         features: string[]
+        gallery:
+          | {
+              caption: string
+              url: string
+            }[]
+          | null
       }
     }
   }
 }
 
 const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
-  const {title, allTech, source, url, features } = data.markdownRemark.frontmatter
+  const { title, allTech, source, url, features, gallery } = data.markdownRemark.frontmatter
 
   const adjustNumbering = (i: number) => (i < 10 ? `0${i + 1}` : i + 1)
 
@@ -99,6 +107,18 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               </ProjectList>
             </Section>
           ) : null}
+          {gallery ? (
+            <Section>
+              <SectionCol size="lg">
+                <Heading>Gallery</Heading>
+              </SectionCol>
+              <GalleryWrapper>
+                {gallery.map(image => (
+                  <GalleryImage src={image.url} />
+                ))}
+              </GalleryWrapper>
+            </Section>
+          ) : null}
         </Container>
       </Page>
     </IndexLayout>
@@ -123,6 +143,10 @@ export const query = graphql`
         source
         url
         features
+        gallery {
+          caption
+          url
+        }
       }
     }
   }

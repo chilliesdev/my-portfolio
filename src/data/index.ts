@@ -78,16 +78,3 @@ export const experience: { id: number; date: string; company: string; descriptio
 ]
 
 export const recommended: number[] = [1, 2]
-
-export const images: {
-  id: number
-  url: string
-  caption: string
-}[] = [
-  {
-    id: 1,
-    url: 'project-1.jpg',
-    caption:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing  elit, sed do eiusmod tempor incididunt ut labore et  dolore magna aliqua. Netus et ma'
-  }
-]
