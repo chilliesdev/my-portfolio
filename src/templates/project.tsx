@@ -114,7 +114,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               </SectionCol>
               <GalleryWrapper>
                 {gallery.map(image => (
-                  <GalleryImage src={image.url} />
+                  <GalleryImage src={useRelativePath(image.url)} caption={image.caption} />
                 ))}
               </GalleryWrapper>
             </Section>
