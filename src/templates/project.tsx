@@ -21,6 +21,8 @@ import ProjectListText from '../styles/ProjectListText'
 import { skills } from '../data'
 import GalleryWrapper from '../styles/GalleryWrapper'
 import GalleryImage from '../styles/GalleryImage'
+import GalleryImageWrapper from '../styles/GalleryImageWrapper'
+import GalleryCaption from '../styles/GalleryCaption'
 
 interface ProjectTemplateProps {
   data: {
@@ -114,7 +116,10 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               </SectionCol>
               <GalleryWrapper>
                 {gallery.map(image => (
-                  <GalleryImage src={useRelativePath(image.url)} caption={image.caption} />
+                  <GalleryImageWrapper>
+                    <GalleryImage src={useRelativePath(image.url)} />
+                    <GalleryCaption>{image.caption}</GalleryCaption>
+                  </GalleryImageWrapper>
                 ))}
               </GalleryWrapper>
             </Section>
