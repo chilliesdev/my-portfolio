@@ -23,6 +23,7 @@ import GalleryWrapper from '../styles/GalleryWrapper'
 import GalleryImage from '../styles/GalleryImage'
 import GalleryImageWrapper from '../styles/GalleryImageWrapper'
 import GalleryCaption from '../styles/GalleryCaption'
+import useImageResolution from '../hooks/useImageResolution'
 
 interface ProjectTemplateProps {
   data: {
@@ -116,10 +117,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               </SectionCol>
               <GalleryWrapper>
                 {gallery.map(image => (
-                  <GalleryImageWrapper>
-                    <GalleryImage src={useRelativePath(image.url)} />
-                    <GalleryCaption>{image.caption}</GalleryCaption>
-                  </GalleryImageWrapper>
+                  <GalleryImage source={useRelativePath(image.url)} resolution={useImageResolution(image.url)} caption={image.caption} />
                 ))}
               </GalleryWrapper>
             </Section>
