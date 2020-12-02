@@ -21,8 +21,6 @@ import ProjectListText from '../styles/ProjectListText'
 import { skills } from '../data'
 import GalleryWrapper from '../styles/GalleryWrapper'
 import GalleryImage from '../styles/GalleryImage'
-import GalleryImageWrapper from '../styles/GalleryImageWrapper'
-import GalleryCaption from '../styles/GalleryCaption'
 import useImageResolution from '../hooks/useImageResolution'
 
 interface ProjectTemplateProps {
@@ -53,7 +51,7 @@ interface ProjectTemplateProps {
 }
 
 const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
-  const { title, allTech, source, url, features, gallery } = data.markdownRemark.frontmatter
+  const { title, allTech, source, url, features, gallery, image } = data.markdownRemark.frontmatter
 
   const adjustNumbering = (i: number) => (i < 10 ? `0${i + 1}` : i + 1)
 
@@ -63,7 +61,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
     <IndexLayout>
       <Page>
         <Container margin="lg">
-          <Hero background="home.jpg">{title}</Hero>
+          <Hero background={image}>{title}</Hero>
           <Section>
             <Heading>{title}</Heading>
             <SectionCol>

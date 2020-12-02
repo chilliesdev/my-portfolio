@@ -27,7 +27,7 @@ export default styled.div<Props>`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: ${fonts.dmSans};
+    font-family: ${fonts.questrial};
     font-size: ${dimensions.fontSize.regular}px;
     color: ${({ theme }) => theme.secondary};
     background: ${({ theme }) => (theme.name === 'light' ? `${theme.primary}90` : `${theme.primary}90`)};
