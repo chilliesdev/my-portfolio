@@ -35,12 +35,10 @@ const About = () => (
           </SectionCol>
         </Section>
         <Section>
-          <SectionCol>
+          <SectionCol size="lg">
             <SubHeading>My skills</SubHeading>
           </SectionCol>
-          <SectionCol>
-            <Skills />
-          </SectionCol>
+          <Skills />
         </Section>
         <Section>
           <SectionCol>

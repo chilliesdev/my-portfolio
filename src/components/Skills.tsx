@@ -1,23 +1,38 @@
 import React from 'react'
 import { skills } from '../data'
+import useRelativePath from '../hooks/useRelativePath'
 
 import StyledSkills from '../styles/StyledSkills'
 import SkillsText from '../styles/SkillsText'
 import SkillsItem from '../styles/SkillsItem'
 import SkillsIcon from '../styles/SkillsIcon'
+import SectionCol from '../styles/SectionCol'
+import SubHeading from '../styles/SubHeading'
+import Section from '../styles/Section'
 
 const Skills: React.FC = () => {
   // const getIconPath = (title: string) => `./images/skills/${title.toLowerCase()}.svg`
 
   return (
-    <StyledSkills>
-      {skills.map(({ id, title, icon }) => (
-        <SkillsItem key={id}>
-          <SkillsIcon src={icon} />
-          <SkillsText>{title}</SkillsText>
-        </SkillsItem>
+    <>
+      {skills.map(({ id, cartegory, details }) => (
+        <Section key={id}>
+          <SectionCol>
+            <SubHeading>{cartegory}</SubHeading>
+          </SectionCol>
+          <SectionCol>
+            <StyledSkills>
+              {details.map(({ id, title, icon }) => (
+                <SkillsItem key={id}>
+                  <SkillsIcon src={useRelativePath(icon)} />
+                  <SkillsText>{title}</SkillsText>
+                </SkillsItem>
+              ))}
+            </StyledSkills>
+          </SectionCol>
+        </Section>
       ))}
-    </StyledSkills>
+    </>
   )
 }
 

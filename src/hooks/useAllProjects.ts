@@ -17,7 +17,7 @@ export interface AllProjectsProps {
   }
 }
 
-const useRelativePath = (id?: number | number[]) => {
+const useAllProjects = (id?: number | number[]) => {
   const allProjects: AllProjectsProps = useStaticQuery(graphql`
     query allProjects {
       allMarkdownRemark {
@@ -64,4 +64,4 @@ const useRelativePath = (id?: number | number[]) => {
   return typeof id === 'number' ? projectsFromSingleId(id) : Array.isArray(id) ? projectsFromMultipleId(id) : allProjects
 }
 
-export default useRelativePath
+export default useAllProjects
