@@ -34,12 +34,7 @@ const About = () => (
             </Section>
           </SectionCol>
         </Section>
-        <Section>
-          <SectionCol size="lg">
-            <SubHeading>My skills</SubHeading>
-          </SectionCol>
-          <Skills />
-        </Section>
+        <Skills />
         <Section>
           <SectionCol>
             <SubHeading>Experience</SubHeading>
@@ -52,7 +47,7 @@ const About = () => (
             <Expericence />
           </SectionCol>
         </Section>
-        <Section display='block'>
+        <Section display="block">
           <Recommended />
         </Section>
       </Container>

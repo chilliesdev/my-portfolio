@@ -15,15 +15,20 @@ const Skills: React.FC = () => {
 
   return (
     <>
+      <Section bottomMargin="5rem">
+        <SectionCol size="lg">
+          <SubHeading>My skills</SubHeading>
+        </SectionCol>
+      </Section>
       {skills.map(({ id, cartegory, details }) => (
-        <Section key={id}>
+        <Section key={id} zeroMargin>
           <SectionCol>
             <SubHeading>{cartegory}</SubHeading>
           </SectionCol>
           <SectionCol>
             <StyledSkills>
-              {details.map(({ id, title, icon }) => (
-                <SkillsItem key={id}>
+              {details.map(({ id: skillsId, title, icon }) => (
+                <SkillsItem key={skillsId}>
                   <SkillsIcon src={useRelativePath(icon)} />
                   <SkillsText>{title}</SkillsText>
                 </SkillsItem>
