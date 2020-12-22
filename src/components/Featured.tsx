@@ -8,6 +8,7 @@ import FeaturedButtonWrapper from '../styles/FeaturedButtonWrapper'
 import ArrowButton from './ArrowButton'
 import BodyText from '../styles/BodyText'
 import useRelativePath from '../hooks/useRelativePath'
+import { devIntro } from '../data'
 
 interface Props {
   details?: {
@@ -30,22 +31,21 @@ interface Defaults {
 }
 
 const defaults: Defaults = {
-  heading: 'Hi, I am a Full-Stack Web Developer',
-  body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod tempor incididunt ut labore et dolore magna  aliqua.
-      Netus et malesuada fames ac turpis egestas  integer eget aliquet. Cursus euismod quis viverra nibh cras  pulvinar mattis nunc.`,
+  heading: devIntro.heading,
+  body: devIntro.body,
   accentBtn: 'About Me',
   arrow: 'featured projects'
 }
 
 const Featured: React.FC<Props> = ({ details, open, onNext }) => {
   return (
-    <StyledFeatured image={details?.image || useRelativePath('home.jpg')} open={open}>
+    <StyledFeatured image={details?.image || useRelativePath(devIntro.picture)} open={open}>
       <FeaturedWrapper open={open}>
         <Heading>{details ? details.heading : defaults.heading}</Heading>
         <BodyText>{details ? details.body : defaults.body}</BodyText>
         <FeaturedButtonWrapper>
           <Button to={details ? details.accentBtn : '/about'} color="accent">
-          {details ? 'details' : defaults.accentBtn}
+            {details ? 'details' : defaults.accentBtn}
           </Button>
           {details && (
             <Button to="/portfolio" color="secondary">

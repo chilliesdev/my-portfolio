@@ -7,6 +7,7 @@ import Hero from '../components/Hero'
 import Container from '../components/Container'
 import Section from '../styles/Section'
 import ProjectIcon from '../components/ProjectIcon'
+import { pageHeroImages } from '../data'
 
 const PortfolioPage: React.FC = () => {
   const AllProjects: AllProjectsProps = useAllProjects()
@@ -15,7 +16,7 @@ const PortfolioPage: React.FC = () => {
     <IndexLayout>
       <Page>
         <Container margin="lg">
-          <Hero background="home.jpg">Portfolio</Hero>
+          <Hero background={pageHeroImages.portfolio}>Portfolio</Hero>
           <Section>
             {AllProjects.allMarkdownRemark.edges.map(({ node }) => {
               const { id, title, description, image, slug, tech } = node.frontmatter

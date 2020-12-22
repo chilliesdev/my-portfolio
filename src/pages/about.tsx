@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react'
-import { useIntersection } from 'react-use'
-import gsap from 'gsap'
-import { story } from '../data'
+import React, { useRef } from 'react'
+import { story, pageHeroImages } from '../data'
+import useOnScrollFadeAnimation from '../hooks/useOnScrollFadeAnimation'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -17,49 +16,25 @@ import Expericence from '../components/Experience'
 import Recommended from '../components/Recommended'
 
 const About = () => {
-  // useEffect(() => {
   const StorySectionRef = useRef<HTMLDivElement>(null)
-  // }, [])
 
-  const StorySectionintersection = useIntersection(StorySectionRef, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 1
+  useOnScrollFadeAnimation({
+    ref: StorySectionRef,
+    threshold: 0.9,
+    identifier: '.fadeIn'
   })
-
-  const fadeIn = (element: any) => {
-    gsap.to(element, 1, {
-      opacity: 1,
-      y: -60,
-      ease: 'power.out',
-      stagger: {
-        amount: 0.3
-      }
-    })
-  }
-
-  const fadeOut = (element: any) => {
-    gsap.to(element, 1, {
-      opacity: 0,
-      y: -20,
-      ease: 'power.out'
-    })
-  }
-
-  // eslint-disable-next-line no-unused-expressions
-  StorySectionintersection && StorySectionintersection.intersectionRatio < 1 ? fadeOut('.fadeIn') : fadeIn('.fadeIn')
 
   return (
     <IndexLayout>
       <Page>
         <Container margin="lg">
-          <Hero background="home.jpg">About Me</Hero>
-          <Section>
+          <Hero background={pageHeroImages.about}>About Me</Hero>
+          <Section ref={StorySectionRef}>
             <SectionCol size="lg">
               <SubHeading className="fadeIn">My story</SubHeading>
             </SectionCol>
             <SectionCol size="lg">
-              <Section ref={StorySectionRef} zeroMargin>
+              <Section zeroMargin>
                 {story.map((paragraph, idx) => (
                   // eslint-disable-next-line react/no-array-index-key
                   <SectionCol key={idx}>
