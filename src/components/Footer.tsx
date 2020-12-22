@@ -3,7 +3,7 @@ import { contacts as contactDetails, profiles } from '../data'
 
 import StyledFooter from '../styles/StyledFooter'
 import FooterInner from '../styles/FooterInner'
-import FooterHeading from '../styles/FooterHeading'
+import SmallHeading from '../styles/SmallHeading'
 import FooterIconWrapper from '../styles/FooterIconWrapper'
 import FooterContactWrapper from '../styles/FooterContactWrapper'
 import FooterContact from '../styles/FooterContact'
@@ -15,7 +15,7 @@ import useRelativePath from '../hooks/useRelativePath'
 const Footer: React.FC = () => (
   <StyledFooter>
     <FooterInner>
-      <FooterHeading>Contacts</FooterHeading>
+      <SmallHeading>Contacts</SmallHeading>
       <FooterIconWrapper>
         {profiles.map(({ id, url, icon }) => (
           <a key={id} href={url} target="_blank" rel="noreferrer">

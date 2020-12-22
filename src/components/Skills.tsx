@@ -9,6 +9,7 @@ import SkillsIcon from '../styles/SkillsIcon'
 import SectionCol from '../styles/SectionCol'
 import SubHeading from '../styles/SubHeading'
 import Section from '../styles/Section'
+import SmallHeading from '../styles/SmallHeading'
 
 const Skills: React.FC = () => {
   // const getIconPath = (title: string) => `./images/skills/${title.toLowerCase()}.svg`
@@ -23,7 +24,7 @@ const Skills: React.FC = () => {
       {skills.map(({ id, cartegory, details }) => (
         <Section key={id} zeroMargin>
           <SectionCol>
-            <SubHeading>{cartegory}</SubHeading>
+            <SmallHeading>{cartegory}</SmallHeading>
           </SectionCol>
           <SectionCol>
             <StyledSkills>

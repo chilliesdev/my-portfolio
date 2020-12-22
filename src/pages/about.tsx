@@ -21,7 +21,7 @@ const About = () => {
   useOnScrollFadeAnimation({
     ref: StorySectionRef,
     threshold: 0.9,
-    identifier: '.fadeIn'
+    identifier: '.story'
   })
 
   return (
@@ -31,14 +31,14 @@ const About = () => {
           <Hero background={pageHeroImages.about}>About Me</Hero>
           <Section ref={StorySectionRef}>
             <SectionCol size="lg">
-              <SubHeading className="fadeIn">My story</SubHeading>
+              <SubHeading className="story">My story</SubHeading>
             </SectionCol>
             <SectionCol size="lg">
               <Section zeroMargin>
                 {story.map((paragraph, idx) => (
                   // eslint-disable-next-line react/no-array-index-key
                   <SectionCol key={idx}>
-                    <StoryText className="fadeIn">{paragraph}</StoryText>
+                    <StoryText className="story">{paragraph}</StoryText>
                   </SectionCol>
                 ))}
               </Section>
