@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { skills } from '../data'
 import useRelativePath from '../hooks/useRelativePath'
 
@@ -10,33 +10,62 @@ import SectionCol from '../styles/SectionCol'
 import SubHeading from '../styles/SubHeading'
 import Section from '../styles/Section'
 import SmallHeading from '../styles/SmallHeading'
+import useOnScrollFadeAnimation from '../hooks/useOnScrollFadeAnimation'
+
+const Cartegory: React.FC<{
+  id: number
+  cartegory: string
+  details: {
+    id: number
+    title: string
+    icon: string
+  }[]
+}> = ({ id, cartegory, details }) => {
+  const SectionRef = useRef<HTMLDivElement>(null)
+
+  useOnScrollFadeAnimation({
+    ref: SectionRef,
+    threshold: 0.9,
+    identifier: `.skills-${id}`
+  })
+
+  return (
+    <Section ref={SectionRef}>
+      <SectionCol>
+        <SmallHeading className={`skills-${id}`}>{cartegory}</SmallHeading>
+      </SectionCol>
+      <SectionCol>
+        <StyledSkills className={`skills-${id}`}>
+          {details.map(({ id: skillId, title, icon }) => (
+            <SkillsItem key={skillId}>
+              <SkillsIcon src={useRelativePath(icon)} />
+              <SkillsText>{title}</SkillsText>
+            </SkillsItem>
+          ))}
+        </StyledSkills>
+      </SectionCol>
+    </Section>
+  )
+}
 
 const Skills: React.FC = () => {
-  // const getIconPath = (title: string) => `./images/skills/${title.toLowerCase()}.svg`
+  const SkillHeadingRef = useRef<HTMLDivElement>(null)
+
+  useOnScrollFadeAnimation({
+    ref: SkillHeadingRef,
+    threshold: 0.9,
+    identifier: '.skillsHeading'
+  })
 
   return (
     <>
       <Section bottomMargin="5rem">
-        <SectionCol size="lg">
-          <SubHeading>My skills</SubHeading>
+        <SectionCol ref={SkillHeadingRef} size="lg">
+          <SubHeading className="skillsHeading">My skills</SubHeading>
         </SectionCol>
       </Section>
       {skills.map(({ id, cartegory, details }) => (
-        <Section key={id} zeroMargin>
-          <SectionCol>
-            <SmallHeading>{cartegory}</SmallHeading>
-          </SectionCol>
-          <SectionCol>
-            <StyledSkills>
-              {details.map(({ id: skillsId, title, icon }) => (
-                <SkillsItem key={skillsId}>
-                  <SkillsIcon src={useRelativePath(icon)} />
-                  <SkillsText>{title}</SkillsText>
-                </SkillsItem>
-              ))}
-            </StyledSkills>
-          </SectionCol>
-        </Section>
+        <Cartegory key={id} id={id} cartegory={cartegory} details={details} />
       ))}
     </>
   )
