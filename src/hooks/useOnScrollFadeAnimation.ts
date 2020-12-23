@@ -3,7 +3,7 @@ import { useIntersection } from 'react-use'
 import gsap from 'gsap'
 
 interface Props {
-  ref: React.RefObject<HTMLDivElement>
+  ref: React.RefObject<HTMLDivElement | HTMLImageElement>
   threshold: number
   identifier: string
 }

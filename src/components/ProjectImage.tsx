@@ -6,20 +6,22 @@ import ButtonGroup from '../styles/ButtonGroup'
 import SubHeading from '../styles/SubHeading'
 import useRelativePath from '../hooks/useRelativePath'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
+interface Props extends React.HTMLAttributes<HTMLImageElement> {
   image: string
   title: string
   slug: string
   large?: boolean
+  refCustom?: React.RefObject<HTMLDivElement> | null | undefined
 }
 
-const ProjectImage: React.FC<Props> = ({ image, title, className, large, slug }) => {
+const ProjectImage: React.FC<Props> = ({ image, title, className, large, slug, refCustom }) => {
   const [hover, setHover] = useState<boolean>(false)
 
   return (
     <StyledProjectImage
       large={large}
       className={className}
+      ref={refCustom || null}
       hover={hover}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
