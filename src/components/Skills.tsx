@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { skills } from '../data'
 import useRelativePath from '../hooks/useRelativePath'
+import useOnScrollFadeAnimation from '../hooks/useOnScrollFadeAnimation'
 
 import StyledSkills from '../styles/StyledSkills'
 import SkillsText from '../styles/SkillsText'
@@ -10,7 +11,6 @@ import SectionCol from '../styles/SectionCol'
 import SubHeading from '../styles/SubHeading'
 import Section from '../styles/Section'
 import SmallHeading from '../styles/SmallHeading'
-import useOnScrollFadeAnimation from '../hooks/useOnScrollFadeAnimation'
 
 const Cartegory: React.FC<{
   id: number

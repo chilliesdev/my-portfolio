@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useRef } from 'react'
 import { graphql } from 'gatsby'
 
 import Page from '../components/Page'
@@ -22,6 +22,7 @@ import { skills } from '../data'
 import GalleryWrapper from '../styles/GalleryWrapper'
 import GalleryImage from '../styles/GalleryImage'
 import useImageResolution from '../hooks/useImageResolution'
+import useOnScrollFadeAnimation from '../hooks/useOnScrollFadeAnimation'
 
 interface ProjectTemplateProps {
   data: {
@@ -57,14 +58,44 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
 
   const getSkillDetails = (techId: number) => skills.filter(skill => skill.id === techId)
 
+  const TitleSectionRef = useRef<HTMLDivElement>(null)
+  const TechSectionRef = useRef<HTMLDivElement>(null)
+  const FeatureSectionRef = useRef<HTMLDivElement>(null)
+  const GallerySectionRef = useRef<HTMLDivElement>(null)
+
+  const PageThreahold = 0.9
+
+  useOnScrollFadeAnimation({
+    ref: TitleSectionRef,
+    threshold: PageThreahold,
+    identifier: '.title-section'
+  })
+
+  useOnScrollFadeAnimation({
+    ref: TechSectionRef,
+    threshold: PageThreahold,
+    identifier: '.tech-section'
+  })
+
+  useOnScrollFadeAnimation({
+    ref: FeatureSectionRef,
+    threshold: PageThreahold,
+    identifier: '.feature-section'
+  })
+  useOnScrollFadeAnimation({
+    ref: GallerySectionRef,
+    threshold: PageThreahold,
+    identifier: '.gallery-section'
+  })
+
   return (
     <IndexLayout>
       <Page>
         <Container margin="lg">
           <Hero background={image}>{title}</Hero>
-          <Section>
-            <Heading>{title}</Heading>
-            <SectionCol>
+          <Section ref={TitleSectionRef}>
+            <Heading className="title-section">{title}</Heading>
+            <SectionCol className="title-section">
               <SourceWrapper>
                 <Icon src={useRelativePath('Github.svg')} />
                 <SourceLink href={source} target="_blank">
@@ -78,10 +109,10 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               </Button>
             </SectionCol>
           </Section>
-          {allTech ? (
-            <Section>
-              <Heading>Technologies</Heading>
-              <ProjectList>
+          {allTech.length > 0 ? (
+            <Section ref={TechSectionRef}>
+              <Heading className="tech-section">Technologies</Heading>
+              <ProjectList className="tech-section">
                 {allTech.map((techId, idx) => {
                   const skillDetails = getSkillDetails(techId)
 
@@ -95,10 +126,10 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               </ProjectList>
             </Section>
           ) : null}
-          {features ? (
-            <Section>
-              <Heading>Features</Heading>
-              <ProjectList>
+          {features.length > 0 ? (
+            <Section ref={FeatureSectionRef}>
+              <Heading className="feature-section">Features</Heading>
+              <ProjectList className="feature-section">
                 {features.map((feature, idx) => (
                   <ProjectListItem flex>
                     <ProjectListNumbering>{adjustNumbering(idx)}</ProjectListNumbering>
@@ -109,11 +140,11 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
             </Section>
           ) : null}
           {gallery ? (
-            <Section>
-              <SectionCol size="lg">
+            <Section ref={GallerySectionRef}>
+              <SectionCol className="gallery-section" size="lg">
                 <Heading>Gallery</Heading>
               </SectionCol>
-              <GalleryWrapper>
+              <GalleryWrapper className="gallery-section">
                 {gallery.map(image => (
                   <GalleryImage source={useRelativePath(image.url)} resolution={useImageResolution(image.url)} caption={image.caption} />
                 ))}

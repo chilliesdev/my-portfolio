@@ -23,12 +23,12 @@ const ProjectIcon: React.FC<Props> = ({ idx, image, title, details }) => {
 
   useOnScrollFadeAnimation({
     ref: Ref,
-    threshold: 0.9,
+    threshold: 0.3,
     identifier: `.project-icon-${idx}`
   })
 
   return (
-    <StyledProjectIcon ref={Ref} className={`.project-icon-${idx}`}>
+    <StyledProjectIcon ref={Ref} className={`project-icon-${idx}`}>
       <ProjectImage slug={details.slug} image={image} title={title} className="grid-image" large />
       <SubHeading>
         <Link to={`/${details.slug}`}>{title}</Link>
