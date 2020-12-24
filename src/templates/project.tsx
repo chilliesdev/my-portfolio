@@ -36,7 +36,10 @@ interface ProjectTemplateProps {
         slug: string
         title: string
         tech: string
-        allTech: number[]
+        allTech: {
+          categoryId: number
+          skillId: number
+        }[]
         source: string
         url: string
         features: string[]
@@ -52,11 +55,16 @@ interface ProjectTemplateProps {
 }
 
 const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
-  const { title, allTech, source, url, features, gallery, image } = data.markdownRemark.frontmatter
+  const { title, allTech, source, url, features, gallery, image } = data.markdownRemark?.frontmatter
 
   const adjustNumbering = (i: number) => (i < 10 ? `0${i + 1}` : i + 1)
 
-  const getSkillDetails = (techId: number) => skills.filter(skill => skill.id === techId)
+  const getSkillDetails = (categoryId: number, skillsId: number) => {
+    const temp = skills.filter(category => category.id === categoryId)
+    const result = temp.filter(skill => skill.id === skillsId)
+
+    return result[0].details[0]
+  }
 
   const TitleSectionRef = useRef<HTMLDivElement>(null)
   const TechSectionRef = useRef<HTMLDivElement>(null)
@@ -109,17 +117,17 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               </Button>
             </SectionCol>
           </Section>
-          {allTech.length > 0 ? (
+          {allTech ? (
             <Section ref={TechSectionRef}>
               <Heading className="tech-section">Technologies</Heading>
               <ProjectList className="tech-section">
-                {allTech.map((techId, idx) => {
-                  const skillDetails = getSkillDetails(techId)
-
+                {allTech.map((tech, idx) => {
+                  // TODO Fix terrible algorithm
+                  const skillDetails = getSkillDetails(tech.categoryId, tech.skillId)
                   return (
                     <ProjectListItem>
                       <ProjectListNumbering>{adjustNumbering(idx)}</ProjectListNumbering>
-                      <ProjectListText large>{skillDetails[0].title}</ProjectListText>
+                      <ProjectListText large>{skillDetails.title}</ProjectListText>
                     </ProjectListItem>
                   )
                 })}
@@ -171,7 +179,10 @@ export const query = graphql`
         slug
         title
         tech
-        allTech
+        allTech {
+          categoryId
+          skillId
+        }
         source
         url
         features

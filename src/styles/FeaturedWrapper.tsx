@@ -12,7 +12,7 @@ export default styled.div<Props>`
   max-width: 352px;
   position: relative;
   right: ${({ open }) => (open ? `0` : `-99rem`)};
-  transition: all ease-in-out 500ms;
+  transition: all ease-in-out 200ms;
   background: none;
   h2 {
     margin-top: 0;

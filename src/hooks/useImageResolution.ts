@@ -17,7 +17,7 @@ interface Props {
 const useImageResolution = (fileName: string) => {
   const allAssets: Props = useStaticQuery(graphql`
     query allImageResolutionQuery {
-      allFile {
+      allFile(filter: { ext: { eq: ".jpg" } }) {
         nodes {
           base
           childImageSharp {

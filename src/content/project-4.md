@@ -6,7 +6,13 @@ image: 'project-2.jpg'
 slug: 'project-4'
 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.'
 tech: 'HTML, CSS and Javascript'
-allTech: [1,2,3]
+allTech: [
+  { categoryId: 1, skillId: 3},
+  { categoryId: 2, skillId: 1},
+  { categoryId: 2, skillId: 2},
+  { categoryId: 2, skillId: 7},
+  { categoryId: 3, skillId: 9},
+]
 source: 'http://github/chilldev/project'
 url: 'http://project.herokuapp.com'
 features: [
