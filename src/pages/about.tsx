@@ -21,7 +21,7 @@ const About = () => {
             <Story />
           </Section>
           {/* <Section> */}
-            <Skills />
+          <Skills />
           {/* </Section> */}
           <Section>
             <Expericence />

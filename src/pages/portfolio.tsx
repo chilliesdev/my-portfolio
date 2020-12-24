@@ -24,6 +24,7 @@ const PortfolioPage: React.FC = () => {
               return (
                 <ProjectIcon
                   key={id}
+                  idx={id}
                   title={title}
                   image={image}
                   details={{
