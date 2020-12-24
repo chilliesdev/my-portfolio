@@ -122,7 +122,6 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               <Heading className="tech-section">Technologies</Heading>
               <ProjectList className="tech-section">
                 {allTech.map((tech, idx) => {
-                  // TODO Fix terrible algorithm
                   const skillDetails = getSkillDetails(tech.categoryId, tech.skillId)
                   return (
                     <ProjectListItem>
