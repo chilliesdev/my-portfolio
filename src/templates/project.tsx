@@ -55,15 +55,15 @@ interface ProjectTemplateProps {
 }
 
 const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
-  const { title, allTech, source, url, features, gallery, image } = data.markdownRemark?.frontmatter
+  const { title, allTech, source, url, features, gallery, image } = data.markdownRemark.frontmatter
 
   const adjustNumbering = (i: number) => (i < 10 ? `0${i + 1}` : i + 1)
 
   const getSkillDetails = (categoryId: number, skillsId: number) => {
     const temp = skills.filter(category => category.id === categoryId)
-    const result = temp.filter(skill => skill.id === skillsId)
+    const result = temp[0].details.filter(skill => skill.id === skillsId)
 
-    return result[0].details[0]
+    return result[0]
   }
 
   const TitleSectionRef = useRef<HTMLDivElement>(null)
@@ -127,7 +127,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
                   return (
                     <ProjectListItem>
                       <ProjectListNumbering>{adjustNumbering(idx)}</ProjectListNumbering>
-                      <ProjectListText large>{skillDetails.title}</ProjectListText>
+                      <ProjectListText large>{skillDetails ? skillDetails.title : 'ERR: Tech not found!'}</ProjectListText>
                     </ProjectListItem>
                   )
                 })}
@@ -153,8 +153,12 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
                 <Heading>Gallery</Heading>
               </SectionCol>
               <GalleryWrapper className="gallery-section">
-                {gallery.map(image => (
-                  <GalleryImage source={useRelativePath(image.url)} resolution={useImageResolution(image.url)} caption={image.caption} />
+                {gallery.map(galleryImage => (
+                  <GalleryImage
+                    source={useRelativePath(galleryImage.url)}
+                    resolution={useImageResolution(galleryImage.url)}
+                    caption={galleryImage.caption}
+                  />
                 ))}
               </GalleryWrapper>
             </Section>
