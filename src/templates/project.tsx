@@ -90,6 +90,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
     threshold: PageThreahold,
     identifier: '.feature-section'
   })
+
   useOnScrollFadeAnimation({
     ref: GallerySectionRef,
     threshold: PageThreahold,
