@@ -37,7 +37,7 @@ const useOnScrollFadeAnimation = (props: Props) => {
 
     // eslint-disable-next-line no-unused-expressions
     intersection && intersection.intersectionRatio < props.threshold ? fadeOut(props.identifier) : fadeIn(props.identifier)
-  }, [])
+  })
 }
 
 export default useOnScrollFadeAnimation
