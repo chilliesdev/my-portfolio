@@ -21,7 +21,6 @@ interface StaticQueryProps {
 }
 
 const IndexLayout: React.FC = ({ children }) => {
-
   const [theme, setTheme] = useState<string>('dark')
 
   useEffect(() => {

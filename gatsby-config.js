@@ -58,7 +58,12 @@ module.exports = {
     },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        icon: `src/assets/Logo.svg`
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`

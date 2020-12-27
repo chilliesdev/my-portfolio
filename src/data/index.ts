@@ -3,17 +3,17 @@ export const featured: number[] = [1, 2, 3]
 
 export const devIntro: { heading: string; body: string; picture: string } = {
   heading: 'Hi, I am a Full-Stack Web Developer',
-  body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod tempor incididunt ut labore et dolore magna  aliqua.
-      Netus et malesuada fames ac turpis egestas  integer eget aliquet. Cursus euismod quis viverra nibh cras  pulvinar mattis nunc.`,
+  body: `Experienced with PHP, Javascript and Typescript my aim as a developer is a to build webisites and web apps that provide great user
+  experience, scalability and beautiful layouts using the best technologies avalaible.`,
   picture: 'home.jpg'
 }
 
 export const pageHeroImages: { about: string; portfolio: string } = {
-  about: 'home.jpg',
-  portfolio: 'home.jpg'
+  about: 'about.jpg',
+  portfolio: 'portfolio.jpg'
 }
 
-export const contacts: string[] = ['mathewkayode116@gmail.com', '+234 (0)801 234 5678']
+export const contacts: string[] = ['mathewkayode116@gmail.com', '+234 (0)805 644 0872']
 
 interface ProfilesProps {
   id: number
