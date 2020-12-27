@@ -53,13 +53,13 @@ const Skills: React.FC = () => {
 
   useOnScrollFadeAnimation({
     ref: SkillHeadingRef,
-    threshold: 0.9,
+    threshold: 0.4,
     identifier: '.skillsHeading'
   })
 
   return (
     <>
-      <Section bottomMargin="5rem">
+      <Section zeroMargin bottomMargin="0">
         <SectionCol ref={SkillHeadingRef} size="lg">
           <SubHeading className="skillsHeading">My skills</SubHeading>
         </SectionCol>

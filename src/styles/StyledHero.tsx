@@ -16,6 +16,7 @@ export default styled.div<Props>`
     ),
     url(${({ image }) => `${image}`}) no-repeat;
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
