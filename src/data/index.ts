@@ -22,7 +22,7 @@ interface ProfilesProps {
 }
 
 export const profiles: ProfilesProps[] = [
-  { id: 1, url: 'https://github.com/chilldev', icon: 'Github.svg' },
+  { id: 1, url: 'https://github.com/chilliesdev', icon: 'Github.svg' },
   { id: 2, url: 'https://linkedin.com/matthewkayode', icon: 'Linkedin.svg' }
 ]
 
