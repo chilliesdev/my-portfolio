@@ -30,12 +30,12 @@ const Cartegory: React.FC<{
   })
 
   return (
-    <Section ref={SectionRef}>
+    <Section ref={SectionRef} zeroMargin bottomMargin="3rem" className={`skills-${id}`} gridGap="1rem">
       <SectionCol>
-        <SmallHeading className={`skills-${id}`}>{cartegory}</SmallHeading>
+        <SmallHeading>{cartegory}</SmallHeading>
       </SectionCol>
       <SectionCol>
-        <StyledSkills className={`skills-${id}`}>
+        <StyledSkills>
           {details.map(({ id: skillId, title, icon }) => (
             <SkillsItem key={skillId}>
               <SkillsIcon src={useRelativePath(icon)} />
@@ -53,15 +53,15 @@ const Skills: React.FC = () => {
 
   useOnScrollFadeAnimation({
     ref: SkillHeadingRef,
-    threshold: 0.4,
+    threshold: 0.9,
     identifier: '.skillsHeading'
   })
 
   return (
     <>
-      <Section zeroMargin bottomMargin="0">
+      <Section zeroMargin bottomMargin="1rem" className="skillsHeading">
         <SectionCol ref={SkillHeadingRef} size="lg">
-          <SubHeading className="skillsHeading">My skills</SubHeading>
+          <SubHeading>My skills</SubHeading>
         </SectionCol>
       </Section>
       {skills.map(({ id, cartegory, details }) => (

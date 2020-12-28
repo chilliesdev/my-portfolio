@@ -8,7 +8,7 @@ import FeaturedButtonWrapper from '../styles/FeaturedButtonWrapper'
 import ArrowButton from './ArrowButton'
 import BodyText from '../styles/BodyText'
 import useRelativePath from '../hooks/useRelativePath'
-import { devIntro } from '../data'
+import { devIntro, resumeLink } from '../data'
 
 interface Props {
   details?: {
@@ -47,9 +47,13 @@ const Featured: React.FC<Props> = ({ details, open, onNext }) => {
           <Button to={details ? details.accentBtn : '/about'} color="accent">
             {details ? 'details' : defaults.accentBtn}
           </Button>
-          {details && (
+          {details ? (
             <Button to="/portfolio" color="secondary">
               all projects
+            </Button>
+          ) : (
+            <Button to={resumeLink} target="_blank" color="secondary">
+              my resume
             </Button>
           )}
         </FeaturedButtonWrapper>
