@@ -57,6 +57,7 @@ export const fonts = {
 
 export const breakpoints = {
   xs: 320,
+  ms: 375,
   sm: 425,
   md: 768,
   lg: 992,

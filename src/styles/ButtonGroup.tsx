@@ -14,7 +14,7 @@ export default styled.div<Props>`
   }
 
   @media screen and (max-width: ${breakpoints.sm}px) {
-    ${props => props.flexDirectionColumnOnSmScreen && `flex-direction: column;`
+    ${props => props.flexDirectionColumnOnSmScreen && `flex-direction: column;`}
   }
 
   @media screen and (max-width: ${breakpoints.xs}px) {
