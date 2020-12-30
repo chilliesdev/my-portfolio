@@ -12,7 +12,7 @@ export default styled.div<{ contact?: boolean }>`
   margin: 1rem;
   margin-bottom: 22px;
 
-  @media screen and (max-width: ${breakpoints.sm}px) {
+  @media screen and (max-width: ${breakpoints.xs}px) {
     ${props => props.contact && `display: none`}
   }
 `

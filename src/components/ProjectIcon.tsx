@@ -29,7 +29,7 @@ const ProjectIcon: React.FC<Props> = ({ idx, image, title, details }) => {
 
   return (
     <StyledProjectIcon ref={Ref} className={`project-icon-${idx}`}>
-      <ProjectImage slug={details.slug} image={image} title={title} className="grid-image" large />
+      <ProjectImage idx={idx} slug={details.slug} image={image} title={title} className="grid-image" large />
       <SubHeading>
         <Link to={`/${details.slug}`}>{title}</Link>
       </SubHeading>

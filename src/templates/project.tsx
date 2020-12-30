@@ -23,6 +23,7 @@ import GalleryWrapper from '../styles/GalleryWrapper'
 import GalleryImage from '../styles/GalleryImage'
 import useImageResolution from '../hooks/useImageResolution'
 import useOnScrollFadeAnimation from '../hooks/useOnScrollFadeAnimation'
+import Recommended from '../components/Recommended'
 
 interface ProjectTemplateProps {
   data: {
@@ -71,7 +72,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
   const FeatureSectionRef = useRef<HTMLDivElement>(null)
   const GallerySectionRef = useRef<HTMLDivElement>(null)
 
-  const PageThreahold = 0.9
+  const PageThreahold = 0.6
 
   useOnScrollFadeAnimation({
     ref: TitleSectionRef,
@@ -163,6 +164,9 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               </GalleryWrapper>
             </Section>
           ) : null}
+          <Section display="block">
+            <Recommended />
+          </Section>
         </Container>
       </Page>
     </IndexLayout>

@@ -15,7 +15,7 @@ const RecommendedItem: React.FC<{ id: number; title: string; image: string; slug
     identifier: `.recomendended-${id}`
   })
 
-  return <ProjectImage refCustom={Ref} className={`recomendended-${id}`} title={title} image={image} slug={slug} />
+  return <ProjectImage idx={id} refCustom={Ref} className={`recomendended-${id}`} title={title} image={image} slug={slug} />
 }
 
 const Recommended: React.FC = () => {
@@ -27,7 +27,8 @@ const Recommended: React.FC = () => {
         const { id, title, image, slug } = node.frontmatter
 
         return recommended.map(
-          recommendedProjectsId => recommendedProjectsId === id && <RecommendedItem key={id} id={id} title={title} image={image} slug={slug} />
+          recommendedProjectsId =>
+            recommendedProjectsId === id && <RecommendedItem key={id} id={id} title={title} image={image} slug={slug} />
         )
       })}
     </StyledRecommended>

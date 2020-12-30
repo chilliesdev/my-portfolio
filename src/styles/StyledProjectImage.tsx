@@ -3,7 +3,6 @@ import { margins } from './defaults/variables'
 
 interface Props {
   background: string
-  hover: boolean
   large?: boolean
 }
 
@@ -16,17 +15,16 @@ export default styled.div<Props>`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url(${({ background }) => background});
+  /* background: url(${({ background }) => background});
   background-size: cover;
-  transition: all ease-in-out 1s;
+  transition: all ease-in-out 1s; */
 
-  &:hover {
+  /* &:hover {
     background: ${({ theme }) => theme.primary};
-    /* transform: rotateX(0deg); */
   }
 
   * {
     opacity: ${({ hover }) => (hover ? 1 : 0)};
     transition: all ease-in-out 500ms;
-  }
+  } */
 `

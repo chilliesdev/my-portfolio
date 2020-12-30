@@ -16,6 +16,7 @@ export default styled.div<Props>`
         : `linear-gradient(${`${props.theme.primary}90`}, ${`${props.theme.primary}90`})`},
     url(${({ image }) => image}) no-repeat;
   background-size: cover;
+  background-position: center;
   z-index: ${({ open }) => (open ? 1 : 0)};
   display: flex;
   justify-content: center;

@@ -13,7 +13,6 @@ export default styled.ul<Props>`
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
   padding-top: 7rem;
   font-family: ${fonts.questrial};
   background: ${({ theme }) => theme.primary};
