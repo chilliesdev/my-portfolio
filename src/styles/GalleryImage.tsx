@@ -18,7 +18,7 @@ export default styled.div<Props>`
   background-size: cover;
   min-width: 50%;
 
-  @media screen and (max-width: ${breakpoints.xs}px) {
+  @media screen and (max-width: ${breakpoints.sm}px) {
     min-width: 100%;
   }
 

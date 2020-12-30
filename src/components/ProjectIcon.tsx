@@ -20,6 +20,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 const ProjectIcon: React.FC<Props> = ({ idx, image, title, details }) => {
   const Ref = useRef<HTMLDivElement>(null)
+  const projectImageRef = useRef<HTMLDivElement>(null)
 
   useOnScrollFadeAnimation({
     ref: Ref,
@@ -29,7 +30,7 @@ const ProjectIcon: React.FC<Props> = ({ idx, image, title, details }) => {
 
   return (
     <StyledProjectIcon ref={Ref} className={`project-icon-${idx}`}>
-      <ProjectImage idx={idx} slug={details.slug} image={image} title={title} className="grid-image" large />
+      <ProjectImage idx={idx} slug={details.slug} image={image} title={title} refCustom={projectImageRef} className="grid-image" large />
       <SubHeading>
         <Link to={`/${details.slug}`}>{title}</Link>
       </SubHeading>
