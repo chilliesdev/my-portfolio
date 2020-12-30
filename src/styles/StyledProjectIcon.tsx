@@ -7,15 +7,12 @@ export default styled.div`
     .grid-image {
       position: relative;
       right: 80px;
-      /* left: 2rem; */
     }
   }
 
   &:nth-of-type(even) {
     .grid-image {
       position: relative;
-      /* right: 3rem; */
-      /* left: 80px; */
     }
   }
 `

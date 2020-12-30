@@ -19,13 +19,9 @@ interface Props extends React.HTMLAttributes<HTMLImageElement> {
 }
 
 const ProjectImage: React.FC<Props> = ({ idx, image, title, className, large, slug, refCustom }) => {
-  // const [hover, setHover] = useState<boolean>(false)
-
   const hovered = useHoverDirty(refCustom)
 
-  // const Ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    // console.log(refCustom)
     const duration = 0.5
 
     const fadeIn = (element: string) => {
@@ -58,7 +54,7 @@ const ProjectImage: React.FC<Props> = ({ idx, image, title, className, large, sl
       <ProjectImageCover className={`project-image-cover-${idx}`} hover={hovered} background={useRelativePath(image)} />
       {/* <ProjectImageWrapper> */}
       <SubHeading>{title}</SubHeading>
-      <ButtonGroup>
+      <ButtonGroup flexDirectionColumnOnSmScreen>
         <Button to={`/${slug}`} color="accent">
           details
         </Button>

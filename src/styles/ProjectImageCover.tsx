@@ -15,18 +15,7 @@ export default styled.div<Props>`
   z-index: 1;
   height: 100%;
   width: 100%;
-  opacity: 1;
+  opacity: ${props => (props.hover ? 1 : 0)};
   transform: translate
-
-  /* ${props =>
-    props.hover &&
-    `
-
-  `} */
-
-  /* &:hover {
-    opacity: 0;
-    transition: 0.5s ease-in-out all;
-    z-index: -1;
-  } */
+  transition: 0.3s ease-in-out all;
 `
