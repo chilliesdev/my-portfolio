@@ -1,30 +1,29 @@
 ---
 id: 2
 layout: project
-title: 'Project 2'
-image: 'project-2.jpg'
-slug: 'project-2'
-description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.'
+title: 'Burger Store Landing Page'
+image: 'food-website-1.jpg'
+slug: 'burger-store'
+description: 'Lightweight landing page built without any framework, just old school HTML, CSS and Javascript.'
 tech: 'HTML, CSS and Javascript'
 allTech: [
-  { categoryId: 1, skillId: 3},
-  { categoryId: 2, skillId: 1},
-  { categoryId: 2, skillId: 2},
-  { categoryId: 2, skillId: 7},
-  { categoryId: 3, skillId: 9},
+  { categoryId: 1, skillId: 5},
+  { categoryId: 1, skillId: 4},
+  { categoryId: 1, skillId: 2},
 ]
-source: 'http://github/chilldev/project'
-url: 'http://project.herokuapp.com'
+source: 'https://github.com/chilliesdev/american-food-website-app'
+url: 'https://quizzical-swartz-cda92c.netlify.app/'
+gallery:
+  [
+    { url: 'food-website-1.jpg', caption: '' },
+    { url: 'food-website-2.jpg', caption: '' },
+    { url: 'food-website-3.jpg', caption: '' },
+  ]
 features: [
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet. Cursus  euismod quis viverra nibh cras pulvinar mattis nunc.',
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet. Cursus  euismod quis viverra nibh cras pulvinar mattis nunc.',
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet. Cursus  euismod quis viverra nibh cras pulvinar mattis nunc.'
+  'Responsive ',
+  'Lightweight '
   ]
 
 ---
 
-Now we're writing in Markdown! Pretty nice, huh?
-
-This starter has out-of-the-box support for basic Markdown rendering. The `content/` directory is where you put all of your Markdown content in. Gatsby will build your pages out of it. Gatsby will also follow the directory structure of your files too, so when you store a page at e.g. `content/projects/large-hadron-collider.md`, it will be built in `/projects/large-hadron-collider/`.
-
-[That's cool! Okay, take me back home.](/)
+Lightweight landing page built without any framework, just old school HTML, CSS and Javascript.

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { graphql } from 'gatsby'
 
 import Page from '../components/Page'
@@ -40,6 +40,7 @@ interface ProjectTemplateProps {
         allTech: {
           categoryId: number
           skillId: number
+          custom?: string
         }[]
         source: string
         url: string
@@ -98,6 +99,8 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
     identifier: '.gallery-section'
   })
 
+  const [fullGalleryImageView, setFullGalleryImageView] = useState<boolean>(false)
+
   return (
     <IndexLayout>
       <Page>
@@ -124,11 +127,19 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               <Heading className="tech-section">Technologies</Heading>
               <ProjectList className="tech-section">
                 {allTech.map((tech, idx) => {
-                  const skillDetails = getSkillDetails(tech.categoryId, tech.skillId)
+                  let skillTitle: string
+
+                  if ( tech.custom ) {
+                    skillTitle = tech.custom
+                  } else {
+                    const skillDetails = getSkillDetails(tech.categoryId, tech.skillId)
+                    skillTitle = skillDetails ? skillDetails.title : 'ERR: Tech not found!'
+                  }
+
                   return (
                     <ProjectListItem>
                       <ProjectListNumbering>{adjustNumbering(idx)}</ProjectListNumbering>
-                      <ProjectListText large>{skillDetails ? skillDetails.title : 'ERR: Tech not found!'}</ProjectListText>
+                      <ProjectListText large>{skillTitle}</ProjectListText>
                     </ProjectListItem>
                   )
                 })}
@@ -156,6 +167,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               <GalleryWrapper className="gallery-section">
                 {gallery.map(galleryImage => (
                   <GalleryImage
+
                     source={useRelativePath(galleryImage.url)}
                     resolution={useImageResolution(galleryImage.url)}
                     caption={galleryImage.caption}

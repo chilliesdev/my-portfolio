@@ -16,7 +16,7 @@ const PortfolioPage: React.FC = () => {
     <IndexLayout>
       <Page>
         <Container margin="lg">
-          <Hero background={pageHeroImages.portfolio}>Portfolio</Hero>
+          <Hero background={pageHeroImages.portfolio}>My Portfolio</Hero>
           <Section>
             {AllProjects.allMarkdownRemark.edges.map(({ node }) => {
               const { id, title, description, image, slug, tech } = node.frontmatter

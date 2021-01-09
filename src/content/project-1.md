@@ -1,36 +1,52 @@
 ---
 id: 1
 layout: project
-title: 'Project 1'
-image: 'project-1.jpg'
-slug: 'project-1'
-description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet.'
-tech: 'HTML, CSS and Javascript'
-allTech: [
-  { categoryId: 1, skillId: 3},
-  { categoryId: 2, skillId: 1},
-  { categoryId: 2, skillId: 2},
-  { categoryId: 2, skillId: 7},
-  { categoryId: 3, skillId: 9},
-]
-source: 'http://github/chilldev/project'
-url: 'http://project.herokuapp.com'
+title: 'School fee payment app'
+image: 'school-fee-app-1.jpg'
+slug: 'school-fee-app-1'
+description: 'The school fees payment app is designed to provide electronic payment methods to secondaary schools in Nigeria'
+tech: 'React, Redux and Laravel'
+allTech:
+  [
+    { categoryId: 2, skillId: 1 },
+    { categoryId: 2, skillId: 2 },
+    { categoryId: 3, skillId: 2 },
+    { categoryId: 5, skillId: 2 },
+    { categoryId: 2, skillId: 9 },
+    { categoryId: 4, skillId: 1 },
+    { categoryId: 0, skillId: 0, custom: 'Paystack' },
+  ]
+source: 'https://github.com/chilliesdev/school-fee-platform'
+url: 'https://school-fee-platform.herokuapp.com/'
 gallery:
   [
-    { url: 'project-1.jpg', caption: 'homepage' },
-    { url: 'project-1.jpg', caption: 'homepage' },
-    { url: 'project-1.jpg', caption: 'homepage' },
+    { url: 'school-fee-app-1.jpg', caption: 'Landing Page' },
+    { url: 'school-fee-app-2.jpg', caption: 'Fee Payment Information' },
+    { url: 'school-fee-app-3.jpg', caption: 'Login' },
+    { url: 'school-fee-app-4.jpg', caption: 'Admin Dashboard' },
+    { url: 'school-fee-app-4.jpg', caption: 'Edit School' },
   ]
 features:
   [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet. Cursus  euismod quis viverra nibh cras pulvinar mattis nunc.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet. Cursus  euismod quis viverra nibh cras pulvinar mattis nunc.',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget aliquet. Cursus  euismod quis viverra nibh cras pulvinar mattis nunc.',
+    'Fast and reliable payment using Paystack Api which was interageted with both reactJs and Laravel. ',
+    'The app is designed to manage multiple and students effectively on the same platform.',
+    'Adequate, readable and reliable record keeping.',
+    'Secured REST Api using JWT token',
   ]
 ---
 
-Now we're writing in Markdown! Pretty nice, huh?
+The school fees payment app is designed to provide electronic payment methods to schools. It aims at providing a single platform were school fee and other fees can be paid and produced accurate transactions records which could be exported to spreadsheet there by enabling financial transparency, speed, efficiency and save cost.
+The aim of the app is to solve school fees and other payments by introducing electronic payment methods in rural areas. It is a single page reactJs application built on top of a Laravel backend with the ability to scale effectively.
+The entire admin area was developed from scratch while the styling was written with sass. The spinner and modals are all Material-UI components
 
-This starter has out-of-the-box support for basic Markdown rendering. The `content/` directory is where you put all of your Markdown content in. Gatsby will build your pages out of it. Gatsby will also follow the directory structure of your files too, so when you store a page at e.g. `content/projects/large-hadron-collider.md`, it will be built in `/projects/large-hadron-collider/`.
+## APP ACCESS(Login)
 
-[That's cool! Okay, take me back home.](/)
+## Administrator
+
+Email - admin@admin.com
+Password - password
+
+## School/User
+
+Email - thompson.enos@example.com
+Password - password
