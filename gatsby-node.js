@@ -3,7 +3,8 @@
 
 const path = require("path")
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
   // Sometimes, optional fields tend to get not picked up by the GraphQL
@@ -13,14 +14,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   switch (node.internal.type) {
     case "MarkdownRemark": {
-      const { permalink, layout } = node.frontmatter
-      const { relativePath } = getNode(node.parent)
+      const { slug, layout } = node.frontmatter
+      // const { relativePath } = getNode(node.parent)
 
-      let slug = permalink
+      // let slug = slug
 
-      if (!slug) {
-        slug = `/${relativePath.replace(".md", "")}/`
-      }
+      // if (!slug) {
+      //   slug = `/${relativePath.replace(".md", "")}/`
+      // }
 
       // Used to generate URL to view this content.
       createNodeField({
