@@ -4,7 +4,7 @@ layout: project
 title: 'blog'
 image: 'blog-1.jpg'
 slug: 'simple-blog'
-description: 'Simple Blog built in GatsbyJs and Typescript.
+description: 'Simple Blog built in GatsbyJs and Typescript.'
 tech: 'Gatsby and Typescript'
 allTech: [
   { categoryId: 2, skillId: 6},

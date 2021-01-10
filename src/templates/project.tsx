@@ -129,7 +129,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
                 {allTech.map((tech, idx) => {
                   let skillTitle: string
 
-                  if ( tech.custom ) {
+                  if (tech.custom) {
                     skillTitle = tech.custom
                   } else {
                     const skillDetails = getSkillDetails(tech.categoryId, tech.skillId)
@@ -167,7 +167,6 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               <GalleryWrapper className="gallery-section">
                 {gallery.map(galleryImage => (
                   <GalleryImage
-
                     source={useRelativePath(galleryImage.url)}
                     resolution={useImageResolution(galleryImage.url)}
                     caption={galleryImage.caption}

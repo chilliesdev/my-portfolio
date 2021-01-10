@@ -35,117 +35,117 @@ export const story: string[] = [
 ]
 
 export const skills: {
-         id: number
-         cartegory: string
-         details: { id: number; title: string; icon: string }[]
-       }[] = [
-         {
-           id: 1,
-           cartegory: 'languages',
-           details: [
-             { id: 1, title: 'PHP', icon: 'php.svg' },
-             { id: 2, title: 'Javascript', icon: 'javascript.svg' },
-             { id: 3, title: 'Typescript', icon: 'typescript.svg' },
-             { id: 4, title: 'HTML', icon: 'html.svg' },
-             { id: 5, title: 'CSS', icon: 'css.svg' }
-           ]
-         },
-         {
-           id: 2,
-           cartegory: 'frontend',
-           details: [
-             { id: 1, title: 'ReactJs', icon: 'reactjs.svg' },
-             { id: 2, title: 'Redux', icon: 'redux.svg' },
-             { id: 3, title: 'VueJs', icon: 'vue-js.svg' },
-             { id: 4, title: 'Jquery', icon: 'jquery-icon.svg' },
-             { id: 5, title: 'SASS', icon: 'sass.svg' },
-             { id: 6, title: 'Gatsby', icon: 'gatsby.svg' },
-             { id: 7, title: 'Graphql', icon: 'graphql.svg' },
-             { id: 8, title: 'Bootstrap', icon: 'bootstrap.svg' },
-             { id: 9, title: 'Material UI', icon: 'material-ui.svg' },
-           ]
-         },
-         {
-           id: 3,
-           cartegory: 'backend',
-           details: [
-             { id: 1, title: 'PHP', icon: 'php.svg' },
-             { id: 2, title: 'Laravel', icon: 'laravel.svg' },
-             { id: 3, title: 'NodeJs', icon: 'node-js.svg' },
-             { id: 4, title: 'EpressJs', icon: 'express-js.svg' },
-             { id: 5, title: 'Firebase', icon: 'firebase.svg' },
-             { id: 6, title: 'Codeigniter', icon: 'codeigniter.svg' }
-           ]
-         },
-         {
-           id: 4,
-           cartegory: 'database',
-           details: [
-             { id: 1, title: 'MySQL', icon: 'mysql.svg' },
-             { id: 2, title: 'PostgreSQL', icon: 'postgresql.svg' },
-             { id: 3, title: 'MongoDB', icon: 'monogodb.svg' }
-           ]
-         },
-         {
-           id: 5,
-           cartegory: 'CMS',
-           details: [{ id: 1, title: 'Wordpress', icon: 'wordpress.svg' }]
-         },
-         {
-           id: 6,
-           cartegory: 'Prototyping',
-           details: [
-             { id: 1, title: 'Figma', icon: 'figma.svg' },
-             { id: 2, title: 'Invision Studio', icon: 'invision.svg' }
-           ]
-         },
-         {
-           id: 7,
-           cartegory: 'Others',
-           details: [
-             { id: 5, title: 'Git', icon: 'git.svg' },
-             { id: 9, title: 'Netlify', icon: 'netlify.svg' },
-             { id: 10, title: 'Heroku', icon: 'heroku.svg' }
-           ]
-         }
-       ]
+  id: number
+  cartegory: string
+  details: { id: number; title: string; icon: string }[]
+}[] = [
+  {
+    id: 1,
+    cartegory: 'languages',
+    details: [
+      { id: 1, title: 'PHP', icon: 'php.svg' },
+      { id: 2, title: 'Javascript', icon: 'javascript.svg' },
+      { id: 3, title: 'Typescript', icon: 'typescript.svg' },
+      { id: 4, title: 'HTML', icon: 'html.svg' },
+      { id: 5, title: 'CSS', icon: 'css.svg' }
+    ]
+  },
+  {
+    id: 2,
+    cartegory: 'frontend',
+    details: [
+      { id: 1, title: 'ReactJs', icon: 'reactjs.svg' },
+      { id: 2, title: 'Redux', icon: 'redux.svg' },
+      { id: 3, title: 'VueJs', icon: 'vue-js.svg' },
+      { id: 4, title: 'Jquery', icon: 'jquery-icon.svg' },
+      { id: 5, title: 'SASS', icon: 'sass.svg' },
+      { id: 6, title: 'Gatsby', icon: 'gatsby.svg' },
+      { id: 7, title: 'Graphql', icon: 'graphql.svg' },
+      { id: 8, title: 'Bootstrap', icon: 'bootstrap.svg' },
+      { id: 9, title: 'Material UI', icon: 'material-ui.svg' }
+    ]
+  },
+  {
+    id: 3,
+    cartegory: 'backend',
+    details: [
+      { id: 1, title: 'PHP', icon: 'php.svg' },
+      { id: 2, title: 'Laravel', icon: 'laravel.svg' },
+      { id: 3, title: 'NodeJs', icon: 'node-js.svg' },
+      { id: 4, title: 'EpressJs', icon: 'express-js.svg' },
+      { id: 5, title: 'Firebase', icon: 'firebase.svg' },
+      { id: 6, title: 'Codeigniter', icon: 'codeigniter.svg' }
+    ]
+  },
+  {
+    id: 4,
+    cartegory: 'database',
+    details: [
+      { id: 1, title: 'MySQL', icon: 'mysql.svg' },
+      { id: 2, title: 'PostgreSQL', icon: 'postgresql.svg' },
+      { id: 3, title: 'MongoDB', icon: 'monogodb.svg' }
+    ]
+  },
+  {
+    id: 5,
+    cartegory: 'CMS',
+    details: [{ id: 1, title: 'Wordpress', icon: 'wordpress.svg' }]
+  },
+  {
+    id: 6,
+    cartegory: 'Prototyping',
+    details: [
+      { id: 1, title: 'Figma', icon: 'figma.svg' },
+      { id: 2, title: 'Invision Studio', icon: 'invision.svg' }
+    ]
+  },
+  {
+    id: 7,
+    cartegory: 'Others',
+    details: [
+      { id: 5, title: 'Git', icon: 'git.svg' },
+      { id: 9, title: 'Netlify', icon: 'netlify.svg' },
+      { id: 10, title: 'Heroku', icon: 'heroku.svg' }
+    ]
+  }
+]
 
 export const experience: { id: number; date: string; company: string; description: string; role: string }[] = [
-         {
-           id: 3,
-           date: 'Feb 2020 - Present',
-           company: 'Self Employed',
-           description: `Developed functional digital design concepts across various platforms to
+  {
+    id: 3,
+    date: 'Feb 2020 - Present',
+    company: 'Self Employed',
+    description: `Developed functional digital design concepts across various platforms to
 strengthen customer’s brand and identity.
 Worked with PHP, Laravel , SQL, Javascript, ReactJs and other frameworks to
 implement customer ideas.
 `,
-           role: 'Freelance Web Developer'
-         },
-         {
-           id: 2,
-           date: 'Nov 2019 - Feb 2020',
-           company: 'Huawei Technologies Co. Nig Ltd',
-           description: `Reviewed code, debugged problems and corrected issues.
+    role: 'Freelance Web Developer'
+  },
+  {
+    id: 2,
+    date: 'Nov 2019 - Feb 2020',
+    company: 'Huawei Technologies Co. Nig Ltd',
+    description: `Reviewed code, debugged problems and corrected issues.
 Delivered performance-driven and user-centric websites that met all business
 requirements.
 Gathered and defined customer requirements to develop clear specifications for
 project plans.
 Planned and engineered RESTful web services to manipulate dynamic datase`,
-           role: 'intern'
-         },
-         {
-           id: 1,
-           date: 'Aug 2019 - Nov 2019',
-           company: 'Silverbird Communications',
-           description: `Leveraged strong understanding of WordPress core to manipulate admin and
+    role: 'intern'
+  },
+  {
+    id: 1,
+    date: 'Aug 2019 - Nov 2019',
+    company: 'Silverbird Communications',
+    description: `Leveraged strong understanding of WordPress core to manipulate admin and
 theme components.
 Installed required plugins and additional coding to fit final design and
 functionality requirements.
 Developed landing pages, dashboards and online applications using PHP,
 Codeigniter and Jquery`,
-           role: 'intern'
-         }
-       ]
+    role: 'intern'
+  }
+]
 
 export const recommended: number[] = [1, 2]
