@@ -61,11 +61,15 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
 
   const adjustNumbering = (i: number) => (i < 10 ? `0${i + 1}` : i + 1)
 
-  const getSkillDetails = (categoryId: number, skillsId: number) => {
-    const temp = skills.filter(category => category.id === categoryId)
-    const result = temp[0].details.filter(skill => skill.id === skillsId)
+  const getSkillDetails = (skillDetailsData: { categoryId: number; skillId: number; custom?: string | undefined }) => {
+    if (skillDetailsData.categoryId !== 0 || skillDetailsData.skillId !== 0) {
+      const temp = skills.filter(category => category.id === skillDetailsData.categoryId)
+      const result = temp[0].details.filter(skill => skill.id === skillDetailsData.skillId)
 
-    return result[0]
+      return result[0].title
+    }
+
+    return skillDetailsData.custom
   }
 
   const TitleSectionRef = useRef<HTMLDivElement>(null)
@@ -127,26 +131,19 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
               <Heading className="tech-section">Technologies</Heading>
               <ProjectList className="tech-section">
                 {allTech.map((tech, idx) => {
-                  let skillTitle: string
-
-                  if (tech.custom) {
-                    skillTitle = tech.custom
-                  } else {
-                    const skillDetails = getSkillDetails(tech.categoryId, tech.skillId)
-                    skillTitle = skillDetails ? skillDetails.title : 'ERR: Tech not found!'
-                  }
+                  const skillDetails = getSkillDetails(tech)
 
                   return (
                     <ProjectListItem>
                       <ProjectListNumbering>{adjustNumbering(idx)}</ProjectListNumbering>
-                      <ProjectListText large>{skillTitle}</ProjectListText>
+                      <ProjectListText large>{skillDetails || 'ERR: Tech not found!'}</ProjectListText>
                     </ProjectListItem>
                   )
                 })}
               </ProjectList>
             </Section>
           ) : null}
-          {features.length > 0 ? (
+          {features ? (
             <Section ref={FeatureSectionRef}>
               <Heading className="feature-section">Features</Heading>
               <ProjectList className="feature-section">
