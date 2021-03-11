@@ -52,7 +52,7 @@ const Featured: React.FC<Props> = ({ details, open, onNext }) => {
               all projects
             </Button>
           ) : (
-            <Button to={resumeLink} target="_blank" color="secondary">
+            <Button to={resumeLink} target="_blank" rel="noreferrer" color="secondary">
               my resume
             </Button>
           )}

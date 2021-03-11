@@ -5,6 +5,7 @@ export default styled.h1`
   color: ${({ theme }) => theme.secondary};
   font-family: ${fonts.dmSans};
   text-transform: capitalize;
+  text-align: center;
   padding: 1rem;
   z-index: 1;
   position: relative;

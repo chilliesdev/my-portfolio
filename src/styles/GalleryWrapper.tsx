@@ -6,14 +6,4 @@ export default styled.div`
   width: 100%;
   overflow-x: scroll;
   grid-column: 1 / span2;
-
-  /* @media screen and (max-width: ${breakpoints.sm}px) {
-    width: calc(100% + ${margins.large}px);
-    margin-left: calc(-${margins.large}px / 2);
-  }
-
-  @media screen and (max-width: ${breakpoints.xs}px) {
-    width: calc(100% + ${margins.small}px);
-    margin-left: calc(-${margins.small}px / 2);
-  } */
 `

@@ -16,7 +16,7 @@ export default styled.div<Props>`
   margin: ${props => (props.zeroMargin ? '0' : '10rem 0')};
   ${props => props.bottomMargin && `margin-bottom: ${props.bottomMargin};`}
 
-  @media screen and (max-width: ${breakpoints.sm}px) {
+  @media screen and (max-width: ${breakpoints.ms}px) {
     grid-template-columns: 100%;
   }
 `

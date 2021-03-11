@@ -8,4 +8,5 @@ interface Props {
 export default styled.span<Props>`
   font-size: ${({ large }) => (large ? dimensions.fontSize.large : dimensions.fontSize.regular)}px;
   height: 100%;
+  align-items: center;
 `

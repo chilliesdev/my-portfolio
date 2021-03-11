@@ -66,7 +66,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
       const temp = skills.filter(category => category.id === skillDetailsData.categoryId)
       const result = temp[0].details.filter(skill => skill.id === skillDetailsData.skillId)
 
-      return result[0].title
+      return result.length > 0 ? result[0].title : 'ERR: Tech Not found'
     }
 
     return skillDetailsData.custom
@@ -115,13 +115,13 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
             <SectionCol className="title-section">
               <SourceWrapper>
                 <Icon src={useRelativePath('Github.svg')} />
-                <SourceLink href={source} target="_blank">
+                <SourceLink href={source} target="_blank" rel="noreferrer">
                   view source code on github
                 </SourceLink>
               </SourceWrapper>
               {/* eslint-disable-next-line react/no-danger */}
               <ProjectContent dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-              <Button color="accent" to={url} target="_blank">
+              <Button color="accent" to={url} target="_blank" rel="noreferrer">
                 Live Preview
               </Button>
             </SectionCol>
@@ -198,6 +198,7 @@ export const query = graphql`
         allTech {
           categoryId
           skillId
+          custom
         }
         source
         url

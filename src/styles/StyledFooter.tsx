@@ -23,7 +23,7 @@ export default styled.footer`
     z-index: -1;
   }
 
-  @media screen and (max-width: ${breakpoints.sm}px) {
+  @media screen and (max-width: ${breakpoints.ms}px) {
     width: 100%;
   }
 

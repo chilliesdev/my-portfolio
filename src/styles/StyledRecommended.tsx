@@ -6,7 +6,8 @@ export default styled.div`
   margin-top: 2rem;
   margin: 0 -${margins.large}px;
 
-  @media screen and (max-width: ${breakpoints.sm}px) {
+  @media screen and (max-width: ${breakpoints.ms}px) {
     display: block;
+    margin: 0 -${margins.small}px;
   }
 `

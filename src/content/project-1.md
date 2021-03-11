@@ -11,7 +11,7 @@ allTech:
     { categoryId: 2, skillId: 1 },
     { categoryId: 2, skillId: 2 },
     { categoryId: 3, skillId: 2 },
-    { categoryId: 5, skillId: 2 },
+    { categoryId: 2, skillId: 5 },
     { categoryId: 2, skillId: 9 },
     { categoryId: 4, skillId: 1 },
     { categoryId: 0, skillId: 0, custom: 'Paystack' },
@@ -24,7 +24,7 @@ gallery:
     { url: 'school-fee-app-2.jpg', caption: 'Fee Payment Information' },
     { url: 'school-fee-app-3.jpg', caption: 'Login' },
     { url: 'school-fee-app-4.jpg', caption: 'Admin Dashboard' },
-    { url: 'school-fee-app-4.jpg', caption: 'Edit School' },
+    { url: 'school-fee-app-5.jpg', caption: 'Edit School' },
   ]
 features:
   [
@@ -39,14 +39,14 @@ The school fees payment app is designed to provide electronic payment methods to
 The aim of the app is to solve school fees and other payments by introducing electronic payment methods in rural areas. It is a single page reactJs application built on top of a Laravel backend with the ability to scale effectively.
 The entire admin area was developed from scratch while the styling was written with sass. The spinner and modals are all Material-UI components
 
-## APP ACCESS(Login)
+##### App Access(Login)
 
-## Administrator
+###### Administrator
 
 Email - admin@admin.com
 Password - password
 
-## School/User
+##### School/User
 
 Email - thompson.enos@example.com
 Password - password
