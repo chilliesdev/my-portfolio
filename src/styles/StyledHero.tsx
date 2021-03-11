@@ -22,7 +22,7 @@ export default styled.div<Props>`
   align-items: center;
   margin-left: -${margins.large}px;
 
-  /* &::after {
+  &::after {
     content: '';
     display: block;
     position: absolute;
@@ -33,10 +33,9 @@ export default styled.div<Props>`
     background: ${props => props.theme.primary};
     opacity: ${({ atTop }) => (atTop ? 0 : 1)};
     transition: all ease-in-out 500ms 500ms;
-  } */
+  }
 
   @media screen and (max-width: ${breakpoints.ms}px) {
-    margin-left: -${margins.small}px;
-
+    margin: -${margins.small}px;
   }
 `
