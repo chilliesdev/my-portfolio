@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-export const featured: number[] = [1, 2, 3]
+export const featured: number[] = [1, 4, 5]
 
 export const devIntro: { heading: string; body: string; picture: string } = {
   heading: 'Hi, I am a Full-Stack Web Developer',
@@ -30,8 +30,8 @@ export const resumeLink = 'https://drive.google.com/file/d/18z3av1lxa_zlgH1i94KL
 
 // each member of an array is a paragraph
 export const story: string[] = [
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget  aliquet. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Purus ut faucibus  pulvinar elementum integer enim neque. Elementum curabitur vitae nunc sed velit dignissim  sodales ut eu. Amet porttitor eget dolor morbi non arcu risus quis varius. Pellentesque  habitant morbi tristique senectus et netus et malesuada fames. Leo integer malesuada nunc  vel. Consectetur lorem donec massa sapien faucibus et molestie. Sed pulvinar proin gravida  hendrerit lectus a. Sed id semper risus in. Fringilla phasellus faucibus scelerisque eleifend  donec pretium vulputate sapien.',
-  '       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Netus et malesuada fames ac turpis egestas integer eget  aliquet. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Purus ut faucibus  pulvinar elementum integer enim neque. Elementum curabitur vitae nunc sed velit dignissim  sodales ut eu. Amet porttitor eget dolor morbi non arcu risus quis varius. Pellentesque  habitant morbi tristique senectus et netus et malesuada fames. Leo integer malesuada nunc  vel. Consectetur lorem donec massa sapien faucibus et molestie. Sed pulvinar proin gravida  hendrerit lectus a. Sed id semper risus in. Fringilla phasellus faucibus scelerisque eleifend  donec pretium vulputate sapien.'
+  `I am a final year student of Computer science Kogi State University, Anyigba. I started my journey into programming in 2015 with c++, were I was exposed to the basics of programming, ever since then I haven't looked back. I had a short in 3d modeling with Blender but rejuvenated my programming career in May 2019.`,
+  'My web development journey started with HTML, CSS and PHP as I aimed from start to become a full stack developer. Over the years have gained worked on various projects '
 ]
 
 export const skills: {

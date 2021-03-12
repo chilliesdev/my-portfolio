@@ -20,7 +20,7 @@ export interface AllProjectsProps {
 const useAllProjects = (id?: number | number[]) => {
   const allProjects: AllProjectsProps = useStaticQuery(graphql`
     query allProjects {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___title }) {
         edges {
           node {
             frontmatter {

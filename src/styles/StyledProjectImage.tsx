@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { margins } from './defaults/variables'
+import { breakpoints, margins } from './defaults/variables'
 
 interface Props {
   background: string
@@ -15,16 +15,8 @@ export default styled.div<Props>`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* background: url(${({ background }) => background});
-  background-size: cover;
-  transition: all ease-in-out 1s; */
 
-  /* &:hover {
-    background: ${({ theme }) => theme.primary};
+  @media screen and (max-width: ${breakpoints.ms}px) {
+    min-width: ${({ large }) => (large ? `calc(100% + ${margins.small}px)` : `calc(50%)`)};
   }
-
-  * {
-    opacity: ${({ hover }) => (hover ? 1 : 0)};
-    transition: all ease-in-out 500ms;
-  } */
 `
