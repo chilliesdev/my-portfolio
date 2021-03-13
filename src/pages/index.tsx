@@ -18,7 +18,7 @@ const IndexPage = () => {
   const nextFeature = () => {
     setFeatureCount(featureCount + 1)
 
-    return setCurrentFeature(prevState => (featureCount === maxFeature ? 0 : featured[0 + featureCount]))
+    return setCurrentFeature(featureCount === maxFeature ? 0 : featured[0 + featureCount])
   }
 
   const opennedFeature = (id: number) => id === currentFeature && true
