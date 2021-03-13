@@ -12,10 +12,13 @@ const IndexPage = () => {
   const featuredProjects: AllProjectsProps = useAllProjects(featured)
 
   const [currentFeature, setCurrentFeature] = useState<number>(0)
+  const [featureCount, setFeatureCount] = useState<number>(0)
   const maxFeature: number = featuredProjects.allMarkdownRemark.edges.length
 
   const nextFeature = () => {
-    return setCurrentFeature(prevState => (prevState === maxFeature ? 0 : prevState + 1))
+    setFeatureCount(featureCount + 1)
+
+    return setCurrentFeature(prevState => (featureCount === maxFeature ? 0 : featured[0 + featureCount]))
   }
 
   const opennedFeature = (id: number) => id === currentFeature && true

@@ -113,12 +113,14 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({ data }) => {
           <Section ref={TitleSectionRef}>
             <Heading className="title-section">{title}</Heading>
             <SectionCol className="title-section">
-              <SourceWrapper>
-                <Icon src={useRelativePath('Github.svg')} />
-                <SourceLink href={source} target="_blank" rel="noreferrer">
-                  view source code on github
-                </SourceLink>
-              </SourceWrapper>
+              {source ? (
+                <SourceWrapper>
+                  <Icon src={useRelativePath('Github.svg')} />
+                  <SourceLink href={source} target="_blank" rel="noreferrer">
+                    view source code on github
+                  </SourceLink>
+                </SourceWrapper>
+              ) : null}
               {/* eslint-disable-next-line react/no-danger */}
               <ProjectContent dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
               <Button color="accent" to={url} target="_blank" rel="noreferrer">
