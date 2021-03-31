@@ -30,8 +30,8 @@ export const resumeLink = 'https://drive.google.com/file/d/18z3av1lxa_zlgH1i94KL
 
 // each member of an array is a paragraph
 export const story: string[] = [
-  `I am a final year student of Computer science Kogi State University, Anyigba. I started my journey into programming in 2015 with c++, were I was exposed to the basics of programming, ever since then I haven't looked back. I had a short in 3d modeling with Blender but rejuvenated my programming career in May 2019.`,
-  'My web development journey started with HTML, CSS and PHP as I aimed from start to become a full stack developer. Over the years have gained worked on various projects '
+  `I am based in Logos, Nigeria. I studied Computer science at Kogi State University, Anyigba. I started my journey into programming in 2015 with c++, were I was exposed to the basics of programming. I had a short spell in 3d modeling with Blender but rejuvenated my programming career in 2019.`,
+  'My web development journey started with HTML, CSS and PHP as I aimed from start to become a full stack developer. Over the years have gained loads of experience while working on various projects and technologies from backend to frontend to working with complex databases.'
 ]
 
 export const skills: {
