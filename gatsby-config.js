@@ -4,6 +4,7 @@ module.exports = {
     description: `Matthew Kayode| FullStack Developer`,
     keywords: `web developer, web designer, javascript, react, laravel`,
     siteUrl: `https://gatsby-starter-typescript-plus.netlify.com`,
+    pathPrefix: `/my-portfolio`,
     author: {
       name: `Matthew Kayode`,
       url: `https://twitter.com/matthekayode19`,
