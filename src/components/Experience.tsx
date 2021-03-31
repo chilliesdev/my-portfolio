@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { experience } from '../data'
 
-import Subtitle from '../styles/Subtitle'
+// import Subtitle from '../styles/Subtitle'
 import SubHeading from '../styles/SubHeading'
 import SectionCol from '../styles/SectionCol'
 import StyledExperience from '../styles/StyledExperience'
@@ -21,7 +21,6 @@ const ExpericenceItem: React.FC<{ id: number; date: string; company: string; des
   description,
   role
 }) => {
-
   const Ref = useRef<HTMLDivElement>(null)
 
   useOnScrollFadeAnimation({
@@ -56,6 +55,9 @@ const Expericence: React.FC = () => {
     <>
       <SectionCol ref={Ref}>
         <SubHeading className="experience">Experience</SubHeading>
+        {/* <Subtitle className="experience">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. et ma
+        </Subtitle> */}
       </SectionCol>
       <SectionCol>
         <StyledExperience>
