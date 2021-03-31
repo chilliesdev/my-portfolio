@@ -2,9 +2,9 @@
 id: 4
 layout: project
 title: 'schools assessment app'
-image: 'school-assessment-app-13.jpg'
+image: 'school-assessment-app-1.jpg'
 slug: 'school-assessment-app'
-description: 'The school fees payment app is designed to provide electronic payment methods to secondaary schools in Nigeria'
+description: 'The school assessment app is e-learning module for sending assignment, test or classwork to students in tetiary instiutions'
 tech: 'React, Redux and Laravel'
 allTech:
   [
@@ -46,7 +46,7 @@ features:
   ]
 ---
 
-The e-assessment app is designed to reduce cost of assessment assignment, test and examination in schools by providing a medium to set question, mark answers, conduct examination and compile results.
+The school assessment app is designed to reduce cost of assessment assignment, test and examination in schools by providing a medium to set question, mark answers, conduct examination and compile results.
 This app using web technology to solve distance barrier in e-learning by providing a means for you Universities to assess students effectively without need for physical contact. The app is mainly designed for universities by managing courses, level, faculty, department, lecturers, students and school sessions/semesters.
 The entire admin area was developed using Admin-LTE Template and bootstrap.
 

@@ -56,9 +56,6 @@ const Expericence: React.FC = () => {
     <>
       <SectionCol ref={Ref}>
         <SubHeading className="experience">Experience</SubHeading>
-        <Subtitle className="experience">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. et ma
-        </Subtitle>
       </SectionCol>
       <SectionCol>
         <StyledExperience>
