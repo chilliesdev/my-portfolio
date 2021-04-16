@@ -5,7 +5,7 @@ title: 'School fee payment app'
 image: 'school-fee-app-1.jpg'
 slug: 'school-fee-app-1'
 description: 'The school fees payment app is designed to provide electronic payment methods to secondaary schools in Nigeria'
-tech: 'React, Redux and Laravel'
+tech: 'Jquery and Codeigniter'
 allTech:
   [
     { categoryId: 2, skillId: 1 },
