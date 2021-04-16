@@ -26,7 +26,7 @@ export const profiles: ProfilesProps[] = [
   { id: 2, url: 'https://www.linkedin.com/in/kayode-matthew-16995a1a9', icon: 'Linkedin.svg' }
 ]
 
-export const resumeLink = 'https://drive.google.com/file/d/18z3av1lxa_zlgH1i94KLU5KRhrSMDcR-/view?usp=drivesdk'
+export const resumeLink = 'https://drive.google.com/file/d/1RNEKzK1Zeya6dW5VDPy29YyFwNVAbLgh/view?usp=drivesdk'
 
 // each member of an array is a paragraph
 export const story: string[] = [
