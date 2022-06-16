@@ -26,7 +26,7 @@ export const profiles: ProfilesProps[] = [
   { id: 2, url: 'https://www.linkedin.com/in/kayode-matthew-16995a1a9', icon: 'Linkedin.svg' }
 ]
 
-export const resumeLink = 'https://drive.google.com/file/d/1RNEKzK1Zeya6dW5VDPy29YyFwNVAbLgh/view?usp=drivesdk'
+export const resumeLink = 'https://drive.google.com/file/d/1hOSTWmJYVC_R-Ljc7EvOsJOw3n9YvzoC/view?usp=sharing'
 
 // each member of an array is a paragraph
 export const story: string[] = [
@@ -43,9 +43,9 @@ export const skills: {
     id: 1,
     cartegory: 'languages',
     details: [
-      { id: 1, title: 'PHP', icon: 'php.svg' },
-      { id: 2, title: 'Javascript', icon: 'javascript.svg' },
-      { id: 3, title: 'Typescript', icon: 'typescript.svg' },
+      { id: 1, title: 'Javascript', icon: 'javascript.svg' },
+      { id: 2, title: 'Typescript', icon: 'typescript.svg' },
+      { id: 3, title: 'PHP', icon: 'php.svg' },
       { id: 4, title: 'HTML', icon: 'html.svg' },
       { id: 5, title: 'CSS', icon: 'css.svg' }
     ]
@@ -56,7 +56,7 @@ export const skills: {
     details: [
       { id: 1, title: 'ReactJs', icon: 'reactjs.svg' },
       { id: 2, title: 'Redux', icon: 'redux.svg' },
-      { id: 3, title: 'VueJs', icon: 'vue-js.svg' },
+//       { id: 3, title: 'VueJs', icon: 'vue-js.svg' },
       { id: 4, title: 'Jquery', icon: 'jquery-icon.svg' },
       { id: 5, title: 'SASS', icon: 'sass.svg' },
       { id: 6, title: 'Gatsby', icon: 'gatsby.svg' },
@@ -69,10 +69,10 @@ export const skills: {
     id: 3,
     cartegory: 'backend',
     details: [
-      { id: 1, title: 'PHP', icon: 'php.svg' },
-      { id: 2, title: 'Laravel', icon: 'laravel.svg' },
-      { id: 3, title: 'NodeJs', icon: 'node-js.svg' },
-      { id: 4, title: 'EpressJs', icon: 'express-js.svg' },
+      { id: 1, title: 'NodeJs', icon: 'node-js.svg' },
+      { id: 2, title: 'EpressJs', icon: 'express-js.svg' },
+      { id: 3, title: 'PHP', icon: 'php.svg' },
+      { id: 4, title: 'Laravel', icon: 'laravel.svg' },
       { id: 5, title: 'Firebase', icon: 'firebase.svg' },
       { id: 6, title: 'Codeigniter', icon: 'codeigniter.svg' }
     ]
